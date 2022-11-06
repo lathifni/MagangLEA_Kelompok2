@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("nama",50);
             $table->int("status");
-            $table->int("hargaaaaaaaaaaaaaa");
+            $table->int("harga");
             $table->timestamps();
         });
     }
