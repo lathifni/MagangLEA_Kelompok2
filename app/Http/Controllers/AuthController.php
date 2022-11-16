@@ -9,7 +9,7 @@ class AuthController extends Controller
 {
     public function login()
     {
-        return view("login");
+        return view("auth.login");
     }
 
     public function authenticate(Request $request)
