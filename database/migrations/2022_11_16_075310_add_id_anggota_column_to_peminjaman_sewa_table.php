@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('produk', function (Blueprint $table) {
-            $table->id();
-            $table->string("nama",50);
-            $table->string('tersedia', 5);
-            $table->string("status", 10);
-            $table->integer("harga");
-            $table->string('kategori');
-            $table->timestamps();
+        Schema::table('peminjaman_sewa', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_anggota')->required();
+            $table->foreign('id_anggota')->references('id')->on('anggota');
         });
     }
 
@@ -31,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produk');
+        Schema::table('peminjaman_sewa', function (Blueprint $table) {
+            $table->dropColumn('id_anggota');
+        });
     }
 };
