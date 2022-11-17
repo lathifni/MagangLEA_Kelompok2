@@ -9,14 +9,16 @@
   <body>
 
     <div class="container mt-5">
-        <form action="/inventaris" method="post">
+        <form action="/inventaris/{{$inventaris->id}}" method="post">
             @csrf
+            @method("put")
             <div class="mb-3">
                 <label for="Nama" class="form-label">Nama Inventaris</label>
-                <input type="text" class="form-control" id="nama" placeholder="Masukkan nama produk" name="nama">
+                <input type="text" class="form-control" id="nama" value="{{$inventaris->nama}}" name="nama">
             </div>
             <div class="mb-3">
                 <label for="Harga" class="form-label">Kategori Inventaris</label>
+                <input type="text" class="form-control" value="{{$inventaris->kategori}}" readonly>
                 <select name="kategori" id="kategori">
                   <option value="habis pakai">Habis pakai</option>
                   <option value="tidak habis pakai">Tidak habis pakai</option> 
@@ -24,6 +26,7 @@
             </div>
             <div class="mb-3">
                 <label for="status" class="form-label">Status Inventaris</label>
+                <input type="text" class="form-control" value="{{$inventaris->status}}" readonly>
                 <select name="status" id="status">
                   <option value="sewa">Hanya dapat disewakan</option>
                   <option value="pinjam">Dapat dipinjamkan</option> 
@@ -31,6 +34,7 @@
             </div>
             <div class="mb-3">
               <label for="kesediaan" class="form-label">Kesediaan Inventaris</label>
+              <input type="text" class="form-control" value="{{$inventaris->tersedia}}" readonly>
               <select name="tersedia" id="tersedia">
                 <option value="ya">ya</option>
                 <option value="tidak">tidak</option> 
@@ -38,7 +42,7 @@
             </div>
             <div class="mb-3">
               <label for="Nama" class="form-label">Harga Sewa Inventaris</label>
-              <input type="int" class="form-control" id="harga" placeholder="Masukkan harga sewa inventaris (isi 0 bila dapat dipinjamkan)" name="harga">
+              <input type="int" class="form-control" id="harga" value="{{$inventaris->harga}}" name="harga">
             </div>
             <div class="mb3">
                 <button type="submit" class="btn btn-success">Kirim</button>

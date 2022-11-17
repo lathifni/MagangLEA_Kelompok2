@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\InventarisController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login',[AuthController::class, 'login']);
- Route::post('/logout', [AuthController::class], 'logout');
+Route::post('/logout', [AuthController::class], 'logout');
 
 Route::middleware("auth")->group(function(){
 
@@ -23,7 +24,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('create_inventaris');
+
 });
-});
+
+Route::get('/inventaris/create', [InventarisController::class, 'create']);
+Route::post('/inventaris', [InventarisController::class, 'store']);
+Route::get('/inventaris/list', [InventarisController::class,'index']);
+Route::get('inventaris/{inventaris}/delete', [InventarisController::class, 'destroy']);
+Route::put('/inventaris/{inventaris}', [InventarisController::class, 'update']);
+Route::get('/inventaris/{inventaris}/edit', [InventarisController::class, 'edit']);
