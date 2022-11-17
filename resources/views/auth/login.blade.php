@@ -1,50 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Login | Inventaris</title>
-    <meta charset="utf-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
-    <link
-        href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
-        rel="stylesheet"
-    />
+        <link
+            href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+            rel="stylesheet"
+        />
 
-    <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
 
-    <link rel="stylesheet" href="../css/loginstyle.css" />
-  </head>
-  <body>
-    <div class="container mt-5">
-      <h2 class="text-center">Login</h2>
+        <link href={{asset("../css/loginstyle.css")}} rel="stylesheet">
+    </head>
+    <body>
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- <div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Login #08</h2>
+				</div> -->
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="login-wrap p-4 p-md-5">
+                            <div
+                                class="icon d-flex align-items-center justify-content-center"
+                            >
+                                <span class="fa fa-user-o"></span>
+                            </div>
+                            <h3 class="text-center mb-4">LOGIN</h3>
+                            <form action="#" class="login-form">
+                                <div class="form-group">
+                                    <input
+                                        type="text"
+                                        class="form-control rounded-left"
+                                        placeholder="Username"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group d-flex">
+                                    <input
+                                        type="password"
+                                        class="form-control rounded-left"
+                                        placeholder="Password"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group d-md-flex">
+                                    <!-- <div class="w-50">
+                                        <label
+                                            class="checkbox-wrap checkbox-primary"
+                                            >Remember Me
+                                            <input type="checkbox" checked />
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> -->
+                                    <!-- <div class="w-30 text-md-right">
+                                        <a href="#">Forgot Password</a>
+                                    </div> -->
+                                </div>
+                                <div class="form-group">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary rounded submit p-3 px-5"
+                                    >
+                                        Get Started
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <form action="/login" method="post" class = "w-50 mx-auto">
-        @csrf
-      <div class="mb-3">
-        <label for="email" class="form-label">Email :</label>
-        <input type="text" class="form-control" id="email" placeholder="Masukkan email..." name="email">
-      </div>
-      
-      <div class="mb-3">
-        <label for="password" class="form-label">Password :</label>
-        <input type="password" class="form-control" id="password" placeholder="masukkan password..."name="password" min="1">
-        
-      </div>
-     
-      
-      <div class="mb-3">
-        <button type="submit" class="btn btn-success"> Login </button>
-      
-      </div>
-      </form> 
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>
