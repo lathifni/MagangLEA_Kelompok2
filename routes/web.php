@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InventarisController;
+use App\Http\Controllers\AnggotaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,10 @@ Route::get('/inventaris/list', [InventarisController::class,'index']);
 Route::get('inventaris/{inventaris}/delete', [InventarisController::class, 'destroy']);
 Route::put('/inventaris/{inventaris}', [InventarisController::class, 'update']);
 Route::get('/inventaris/{inventaris}/edit', [InventarisController::class, 'edit']);
+
+Route::get('/anggota/create', [AnggotaController::class, 'create']);
+Route::post('/anggota', [AnggotaController::class, 'member']);
+Route::get('/anggota/list', [AnggotaController::class,'index']);
+Route::get('/anggota/{anggota}/delete', [AnggotaController::class, 'destroy']);
+Route::put('/anggota/{anggota}', [AnggotaController::class, 'update']);
+Route::get('/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
