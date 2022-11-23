@@ -37,6 +37,12 @@ class AuthController extends Controller
 
     public function postlogin (Request $request)
     {
-        dd($request->all());
+       // dd($request->all());
+       if(Auth::attempt($request->only('email','password')))
+       {
+        return redirect('create_inventaris');
+       }
+
+       return redirect('login');
     }
 }
