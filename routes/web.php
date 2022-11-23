@@ -41,3 +41,7 @@ Route::get('/anggota/list', [AnggotaController::class,'index']);
 Route::get('/anggota/{anggota}/delete', [AnggotaController::class, 'destroy']);
 Route::put('/anggota/{anggota}', [AnggotaController::class, 'update']);
 Route::get('/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
+
+Route::get('/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate']);
+Route::get('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('peminjaman_sewa/create');
+Route::get('/peminjaman_sewaa', [Peminjaman_sewaController::class, 'create']);
