@@ -125,11 +125,10 @@
                             class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                             class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/anggota/list" aria-expanded="false"><i
+                <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
                             class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
                             class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
-                    </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -151,7 +150,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Edit Data Anggota</h3>
+                        <h3 class="text">Tambah Data Anggota</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -165,36 +164,34 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/anggota/{{$anggota->id}}" method="post">
-                                        @method('put')
+                                    <form action="/admin/anggota" method="post">
                                         @csrf
-                                        <div class="mb-3">
-                                            <label for="Nama" class="form-label">Nama Anggota</label>
-                                            <input type="text" class="form-control" id="nama" value="{{$anggota->nama}}" name="nama">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="Nama" class="form-label">Nomor HP</label>
-                                            <input type="text" class="form-control" id="no_hp" value="{{$anggota->no_hp}}" name="no_hp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="Nama" class="form-label">Email</label>
-                                            <input type="text" class="form-control" id="email" value="{{$anggota->email}}" name="email">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="Harga" class="form-label">Jenis Kelamin</label>
-                                            <input type="text" class="form-control" value="{{$anggota->jenis_kelamin}}" readonly>
-                                            <select name="jenis_kelamin" id="jenis_kelamin">
-                                              <option value="laki-laki">Laki-Laki</option>
-                                              <option value="perempuan">Perempuan</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="Nama" class="form-label">Alamat</label>
-                                            <input type="text" class="form-control" id="alamat" value="{{$anggota->alamat}}" name="alamat">
-                                        </div>
-                                          <div class="mb-3">
-                                            <button type="submit" class="btn btn-success">Submit</button>
-                                          </div>
+                                    <div class="mb-3">
+                                        <label for="formGroupExampleInput" class="form-label" id="nama">Nama Anggota</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama Anggota" name="nama">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="formGroupExampleInput2" class="form-label" id="no_hp">Nomor HP</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan No.HP Anggota" name="no_hp">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="formGroupExampleInput2" class="form-label" id="email">Email</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Email Anggota" name="email">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="formGroupExampleInput2" class="form-label" id="alamat">Alamat</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Alamat Anggota" name="alamat">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="status" class="form-label">Jenis Kelamin</label>
+                                        <select name="jenis_kelamin" id="jenis_kelamin">
+                                          <option value="laki-laki">Laki-Laki</option>
+                                          <option value="perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                      <div class="mb-3">
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                      </div>
                                 </div>
                                 </form>
                                 </div>

@@ -115,17 +115,15 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/staff/staff" aria-expanded="false"><i
                             class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
-                            class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
-                            class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/inventaris/data" aria-expanded="false"><i
+                            class="mdi mdi-account-check"></i><span class="hide-menu">Inventaris</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
                             class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                             class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/anggota/list" aria-expanded="false"><i
+                <li> <a class="waves-effect waves-dark" href="/staff/anggota/list" aria-expanded="false"><i
                             class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
                             class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
@@ -151,7 +149,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Data Anggota</h3>
+                        <h3 class="text">Edit Data Anggota</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -165,37 +163,38 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <a href="/anggota/create" class="btn btn-success mb-3">Tambah Anggota</a>
-
-                                    <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Nama Anggota</th>
-                                            <th scope="col">Nomor HP</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Alamat</th>
-                                            <th scope="col">Jenis Kelamin</th>
-                                            <th scope="col">Aksi</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($anggota as $a )
-                                          <tr>
-                                            <th scope="row">{{$loop->iteration}}</th>
-                                            <td>{{$a->nama}}</td>
-                                            <td>{{$a->no_hp}}</td>
-                                            <td>{{$a->email}}</td>
-                                            <td>{{$a->jenis_kelamin}}</td>
-                                            <td>{{$a->alamat}}</td>
-                                            <td>
-                                                <a href="/anggota/{{$a->id}}/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/anggota/{{$a->id}}/delete" class="btn btn-danger"><i class="bi bi-trash"></i>Hapus</a>
-                                            </td>
-                                            @endforeach
-                                          </tr>
-                                        </tbody>
-                                      </table>
+                                    <form action="/staff/anggota/{{$anggota->id}}" method="post">
+                                        @method('put')
+                                        @csrf
+                                        <div class="mb-3">
+                                            <label for="Nama" class="form-label">Nama Anggota</label>
+                                            <input type="text" class="form-control" id="nama" value="{{$anggota->nama}}" name="nama">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="Nama" class="form-label">Nomor HP</label>
+                                            <input type="text" class="form-control" id="no_hp" value="{{$anggota->no_hp}}" name="no_hp">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="Nama" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email" value="{{$anggota->email}}" name="email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="Harga" class="form-label">Jenis Kelamin</label>
+                                            <input type="text" class="form-control" value="{{$anggota->jenis_kelamin}}" readonly>
+                                            <select name="jenis_kelamin" id="jenis_kelamin">
+                                              <option value="laki-laki">Laki-Laki</option>
+                                              <option value="perempuan">Perempuan</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="Nama" class="form-label">Alamat</label>
+                                            <input type="text" class="form-control" id="alamat" value="{{$anggota->alamat}}" name="alamat">
+                                        </div>
+                                          <div class="mb-3">
+                                            <button type="submit" class="btn btn-success">Submit</button>
+                                          </div>
+                                </div>
+                                </form>
                                 </div>
                             </div>
                         </div>
