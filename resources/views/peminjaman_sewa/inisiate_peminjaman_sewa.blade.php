@@ -12,7 +12,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="/peminjaman_sewa/create" method="post">
+        @csrf
         <div class="row">
             <div class="col-lg-6">
              <div class="form-group">
@@ -21,7 +22,7 @@
                <div class="input-group-addon">
                       <span class="glyphicon glyphicon-th"></span>
                   </div>
-                  <input placeholder="Tanggal Peminjaman" type="text" class="form-control datepicker" name="tgl_awal">
+                  <input placeholder="Tanggal Peminjaman" type="text" class="form-control datepicker" name="tanggal_transaksi_pengembalian">
               </div>
              </div>
              <div class="form-group">
@@ -30,18 +31,30 @@
                <div class="input-group-addon">
                       <span class="glyphicon glyphicon-th"></span>
                   </div>
-                  <input placeholder="Tanggal Pengembalian" type="text" class="form-control datepicker" name="tgl_akhir">
+                  <input placeholder="Tanggal Pengembalian" type="text" class="form-control datepicker" name="tanggal_dikembalikan">
               </div>
              </div>
             </div>
            </div>
+           <div class="form-group">
+            <label for="name" class="col-md-4 col-form-label">Anggota</label>
+    
+            <div class="col-md-6">
+                <select name="id_anggota" id="id_anggota" class="form-control">
+                    <option value="">== Pilih Anggota ==</option>
+                    @foreach ($anggota as $row)
+                        <option value="{{ $row->id }}">{{ $row->nama }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
            <div class="mb3">
                <button type="submit" class="btn btn-success">Kirim</button>
            </div>
     </form>
     <script type="text/javascript">
         $('.date').datepicker({  
-           format: 'mm-dd-yyyy'
+           format: 'yyyy-m-d'
          });  
     </script> 
 </body>

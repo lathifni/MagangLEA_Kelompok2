@@ -12,4 +12,8 @@ class Anggota extends Model
     protected $guard = ['id'];
     protected $hidden = [];
     protected $fillable = ['nama', 'no_hp', 'email', 'jenis_kelamin', 'alamat'];
+
+    public function peminjaman_sewa(){
+        return $this -> hasMany(Peminjaman_sewa::class);
+    }
 }
