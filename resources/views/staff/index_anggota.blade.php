@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Dashboard Admin</title>
+    <title>Dashboard</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -115,20 +115,18 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
-                                    class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
-                                    class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
-                                    class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
-                                    class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
-                                    class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                                    class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/staff/staff" aria-expanded="false"><i
+                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/inventaris/data" aria-expanded="false"><i
+                            class="mdi mdi-account-check"></i><span class="hide-menu">Inventaris</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
+                            class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
+                            class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/staff/anggota/list" aria-expanded="false"><i
+                            class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                            class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -151,7 +149,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Dashboard</h3>
+                        <h3 class="text">Data Anggota</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -164,8 +162,39 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h6>Selamat Datang di Admin Dashboard</h6>
+                                <div class="container mt-5">
+                                    <a href="/staff/anggota/create" class="btn btn-success mb-3">Tambah Anggota</a>
 
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Nama Anggota</th>
+                                            <th scope="col">Nomor HP</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Alamat</th>
+                                            <th scope="col">Jenis Kelamin</th>
+                                            <th scope="col">Aksi</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($anggota as $a )
+                                          <tr>
+                                            <th scope="row">{{$loop->iteration}}</th>
+                                            <td>{{$a->nama}}</td>
+                                            <td>{{$a->no_hp}}</td>
+                                            <td>{{$a->email}}</td>
+                                            <td>{{$a->jenis_kelamin}}</td>
+                                            <td>{{$a->alamat}}</td>
+                                            <td>
+                                                <a href="/staff/anggota/{{$a->id}}/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/staff/anggota/{{$a->id}}/delete" class="btn btn-danger"><i class="bi bi-trash"></i>Hapus</a>
+                                            </td>
+                                            @endforeach
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
                             </div>
                         </div>
                     </div>

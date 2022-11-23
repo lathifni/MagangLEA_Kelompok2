@@ -123,7 +123,7 @@
                                     class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/anggota/list" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/staff/anggota/list" aria-expanded="false"><i
                                     class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
                                     class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>

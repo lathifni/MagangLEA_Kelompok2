@@ -125,7 +125,7 @@
                             class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                             class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/anggota/list" aria-expanded="false"><i
+                <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
                             class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
                             class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
@@ -165,7 +165,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <a href="/anggota/create" class="btn btn-success mb-3">Tambah Anggota</a>
+                                    <a href="/admin/anggota/create" class="btn btn-success mb-3">Tambah Anggota</a>
 
                                     <table class="table">
                                         <thead>
@@ -189,8 +189,8 @@
                                             <td>{{$a->jenis_kelamin}}</td>
                                             <td>{{$a->alamat}}</td>
                                             <td>
-                                                <a href="/anggota/{{$a->id}}/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/anggota/{{$a->id}}/delete" class="btn btn-danger"><i class="bi bi-trash"></i>Hapus</a>
+                                                <a href="/admin/anggota/{{$a->id}}/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/anggota/{{$a->id}}/delete" class="btn btn-danger"><i class="bi bi-trash"></i>Hapus</a>
                                             </td>
                                             @endforeach
                                           </tr>

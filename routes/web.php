@@ -22,16 +22,16 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/login',[AuthController::class, 'login']);
 // Route::post('/logout', [AuthController::class], 'logout');
 
-Route::get('/login', function(){
+Route::get('/', function(){
     return view('auth.login');
 });
 Route::post('/postlogin', 'AuthController@postlogin')->name('postlogin');
 
 Route::middleware("auth")->group(function(){
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 });
@@ -44,17 +44,29 @@ Route::get('inventaris/{inventaris}/delete', [InventarisController::class, 'dest
 Route::put('/inventaris/{inventaris}', [InventarisController::class, 'update']);
 Route::get('/inventaris/{inventaris}/edit', [InventarisController::class, 'edit']);
 
-Route::get('/anggota/create', [AnggotaController::class, 'create']);
-Route::post('/anggota', [AnggotaController::class, 'member']);
-Route::get('/anggota/list', [AnggotaController::class,'index']);
-Route::get('/anggota/{anggota}/delete', [AnggotaController::class, 'destroy']);
-Route::put('/anggota/{anggota}', [AnggotaController::class, 'update']);
-Route::get('/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
+Route::get('/admin/anggota/create', [AnggotaController::class, 'create']);
+Route::post('/admin/anggota', [AnggotaController::class, 'member']);
+Route::get('/admin/anggota/list', [AnggotaController::class,'index']);
+Route::get('/admin/anggota/{anggota}/delete', [AnggotaController::class, 'destroy']);
+Route::put('/admin/anggota/{anggota}', [AnggotaController::class, 'update']);
+Route::get('/admin/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
+
+Route::get('/staff/anggota/create', [AnggotaController::class, 'create1']);
+Route::post('/staff/anggota', [AnggotaController::class, 'member1']);
+Route::get('/staff/anggota/list', [AnggotaController::class,'index1']);
+Route::get('/staff/anggota/{anggota}/delete', [AnggotaController::class, 'destroy1']);
+Route::put('/staff/anggota/{anggota}', [AnggotaController::class, 'update1']);
+Route::get('/staff/anggota/{anggota}/edit', [AnggotaController::class, 'edit1']);
 
 Route::get('/admin/admin', [AdminController::class, 'create']);
 Route::get('/staff/staff', [StaffController::class, 'create']);
 
 Route::get('/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate']);
+<<<<<<< HEAD
 Route::get('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('peminjaman_sewa/create_g');
 Route::post('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'storeCreate'])->name('peminjaman_sewa/create_p');
 Route::get('/peminjaman_sewaa', [Peminjaman_sewaController::class, 'create']);
+=======
+Route::get('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('peminjaman_sewa/create');
+Route::get('/peminjaman_sewaa', [Peminjaman_sewaController::class, 'create']);
+>>>>>>> 50bbc43f348de2a7a9ba9a51eb64f014ea23db0b
