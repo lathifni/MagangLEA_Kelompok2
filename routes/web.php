@@ -5,6 +5,7 @@ use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\Peminjaman_sewaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,3 +53,7 @@ Route::get('/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
 
 Route::get('/admin/admin', [AdminController::class, 'create']);
 Route::get('/staff/staff', [StaffController::class, 'create']);
+
+Route::get('/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate']);
+Route::get('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('peminjaman_sewa/create');
+Route::get('/peminjaman_sewaa', [Peminjaman_sewaController::class, 'create']);
