@@ -1,14 +1,14 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use App\Models\Inventaris;
 use Illuminate\Http\Request;
- 
+
 class InventarisController extends Controller
 {
     public function create (){
-        return view('create_inventaris');
+        return view('/admin/create_inventaris');
     }
 
     public function store(Request $request){
@@ -25,7 +25,7 @@ class InventarisController extends Controller
 
     public function index(){
         $inventaris = Inventaris::all();
-        return view('index_inventaris', compact('inventaris'));
+        return view('/admin/index_inventaris', compact('inventaris'));
     }
 
     public function destroy(Inventaris $inventaris){
@@ -34,7 +34,7 @@ class InventarisController extends Controller
     }
 
     public function edit(Inventaris $inventaris){
-        return view('edit_inventaris', compact('inventaris'));
+        return view('/admin/edit_inventaris', compact('inventaris'));
     }
 
     public function update(Request $request, Inventaris $inventaris){

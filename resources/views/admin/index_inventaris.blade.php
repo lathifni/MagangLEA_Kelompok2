@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Dashboard</title>
+    <title>List Inventaris</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -84,14 +84,14 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item hidden-xs-down search-box"> <a
+                        {{-- <li class="nav-item hidden-xs-down search-box"> <a
                                 class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
                                     class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a
                                     class="srh-btn"><i class="ti-close"></i></a>
                             </form>
-                        </li>
+                        </li> --}}
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
@@ -115,20 +115,20 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
                                     class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
-                                    class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i
-                                    class="mdi mdi-table"></i><span class="hide-menu">Table</span></a></li>
+                                    class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
+                                    class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
-                                    class="mdi mdi-emoticon"></i><span class="hide-menu">Icons</span></a></li>
+                                    class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
-                                    class="mdi mdi-earth"></i><span class="hide-menu">Map</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Blank</span></a></li>
+                                    class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/anggota/list" aria-expanded="false"><i
+                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                                    class="mdi mdi-help-circle"></i><span class="hide-menu">404</span></a></li>
+                                    class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -151,7 +151,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Dashboard</h3>
+                        <h3 class="text">Inventaris</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -164,43 +164,41 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="container mt-5">
-                                    <form action="/inventaris" method="post">
-                                        @csrf
-                                        <div class="mb-3">
-                                            <label for="Nama" class="form-label">Nama Inventaris</label>
-                                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama produk" name="nama">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="Harga" class="form-label">Kategori Inventaris</label>
-                                            <select name="kategori" id="kategori">
-                                              <option value="habis pakai">Habis pakai</option>
-                                              <option value="tidak habis pakai">Tidak habis pakai</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="status" class="form-label">Status Inventaris</label>
-                                            <select name="status" id="status">
-                                              <option value="sewa">Hanya dapat disewakan</option>
-                                              <option value="pinjam">Dapat dipinjamkan</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                          <label for="kesediaan" class="form-label">Kesediaan Inventaris</label>
-                                          <select name="tersedia" id="tersedia">
-                                            <option value="ya">ya</option>
-                                            <option value="tidak">tidak</option>
-                                          </select>
-                                        </div>
-                                        <div class="mb-3">
-                                          <label for="Nama" class="form-label">Harga Sewa Inventaris</label>
-                                          <input type="int" class="form-control" id="harga" placeholder="Masukkan harga sewa inventaris (isi 0 bila dapat dipinjamkan)" name="harga">
-                                        </div>
-                                        <div class="mb3">
-                                            <button type="submit" class="btn btn-success">Kirim</button>
-                                        </div>
-                                    </form>
-                                </div>
+                            <div class="container mt-5">
+       <a href="/inventaris/create" target="blank">Tambah Inventaris</a>
+       <table class="table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>nama</th>
+                <th>Status</th>
+                <th>Tersedia</th>
+                <th>Kategori</th>
+                <th>Harga</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($inventaris as $i)
+            <tr>
+                <th>{{$loop->iteration}}</th>
+                <td>{{$i->nama}}</td>
+                <td>{{$i->status}}</td>
+                <td>{{$i->tersedia}}</td>
+                <td>{{$i->kategori}}</td>
+                <td>{{$i->harga}}</td>
+                <td>
+                    <a href="/inventaris/{{$i->id}}/edit" class="btn btn-warning">
+                      <i class="bi bi-pencil"></i>Edit</a>
+                    <a href="/inventaris/{{$i->id}}/delete" class="btn btn-warning">
+                      <i class="bi bi-trash"></i>Hapus</a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+       </table>
+    </div>
+
                             </div>
                         </div>
                     </div>

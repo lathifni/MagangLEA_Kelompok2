@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,10 +28,10 @@ Route::post('/postlogin', 'AuthController@postlogin')->name('postlogin');
 Route::middleware("auth")->group(function(){
 
 Route::get('/', function () {
-    return view('welcome'); 
+    return view('welcome');
 });
 
-    
+
 });
 
 Route::get('/inventaris/create', [InventarisController::class, 'create']);
@@ -47,3 +48,4 @@ Route::get('/anggota/{anggota}/delete', [AnggotaController::class, 'destroy']);
 Route::put('/anggota/{anggota}', [AnggotaController::class, 'update']);
 Route::get('/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
 
+Route::get('/admin/admin', [AdminController::class, 'create']);

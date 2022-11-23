@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Dashboard</title>
+    <title>Edit Inventaris</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -129,6 +129,7 @@
                             class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
                             class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                    </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -150,7 +151,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Tambah Data Anggota</h3>
+                        <h3 class="text">Edit Inventaris</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -164,36 +165,45 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/anggota" method="post">
+                                    <form action="/inventaris/{{$inventaris->id}}" method="post">
                                         @csrf
-                                    <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label" id="nama">Nama Anggota</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama Anggota" name="nama">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="no_hp">Nomor HP</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan No.HP Anggota" name="no_hp">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="email">Email</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Email Anggota" name="email">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="alamat">Alamat</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Alamat Anggota" name="alamat">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="status" class="form-label">Jenis Kelamin</label>
-                                        <select name="jenis_kelamin" id="jenis_kelamin">
-                                          <option value="laki-laki">Laki-Laki</option>
-                                          <option value="perempuan">Perempuan</option>
-                                        </select>
-                                    </div>
-                                      <div class="mb-3">
-                                        <button type="submit" class="btn btn-success">Submit</button>
-                                      </div>
-                                </div>
-                                </form>
+                                        @method("put")
+                                        <div class="mb-3">
+                                            <label for="Nama" class="form-label">Nama Inventaris</label>
+                                            <input type="text" class="form-control" id="nama" value="{{$inventaris->nama}}" name="nama">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="Harga" class="form-label">Kategori Inventaris</label>
+                                            <input type="text" class="form-control" value="{{$inventaris->kategori}}" readonly>
+                                            <select name="kategori" id="kategori">
+                                              <option value="habis pakai">Habis pakai</option>
+                                              <option value="tidak habis pakai">Tidak habis pakai</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="status" class="form-label">Status Inventaris</label>
+                                            <input type="text" class="form-control" value="{{$inventaris->status}}" readonly>
+                                            <select name="status" id="status">
+                                              <option value="sewa">Hanya dapat disewakan</option>
+                                              <option value="pinjam">Dapat dipinjamkan</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="kesediaan" class="form-label">Kesediaan Inventaris</label>
+                                          <input type="text" class="form-control" value="{{$inventaris->tersedia}}" readonly>
+                                          <select name="tersedia" id="tersedia">
+                                            <option value="ya">ya</option>
+                                            <option value="tidak">tidak</option>
+                                          </select>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="Nama" class="form-label">Harga Sewa Inventaris</label>
+                                          <input type="int" class="form-control" id="harga" value="{{$inventaris->harga}}" name="harga">
+                                        </div>
+                                        <div class="mb3">
+                                            <button type="submit" class="btn btn-success">Kirim</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
