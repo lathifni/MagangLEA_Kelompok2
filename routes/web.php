@@ -22,16 +22,16 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/login',[AuthController::class, 'login']);
 // Route::post('/logout', [AuthController::class], 'logout');
 
-Route::get('/login', function(){
+Route::get('/', function(){
     return view('auth.login');
 });
 Route::post('/postlogin', 'AuthController@postlogin')->name('postlogin');
 
 Route::middleware("auth")->group(function(){
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 });
