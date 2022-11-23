@@ -15,17 +15,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login', [AuthController::class, 'login']);
-Route::post('/login',[AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class], 'logout');
+// Route::get('/login', [AuthController::class, 'login']);
+// Route::post('/login',[AuthController::class, 'login']);
+// Route::post('/logout', [AuthController::class], 'logout');
+
+Route::get('/login', function(){
+    return view('auth.login');
+});
+Route::post('/postlogin', 'AuthController@postlogin')->name('postlogin');
 
 Route::middleware("auth")->group(function(){
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); 
 });
 
-
+    
 });
 
 Route::get('/inventaris/create', [InventarisController::class, 'create']);
@@ -41,3 +46,4 @@ Route::get('/anggota/list', [AnggotaController::class,'index']);
 Route::get('/anggota/{anggota}/delete', [AnggotaController::class, 'destroy']);
 Route::put('/anggota/{anggota}', [AnggotaController::class, 'update']);
 Route::get('/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
+

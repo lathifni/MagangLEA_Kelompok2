@@ -21,7 +21,8 @@
         <link href={{asset("../css/loginstyle.css")}} rel="stylesheet">
     </head>
     <body>
-        <section class="ftco-section">
+        <section  class="ftco-section" >
+            
             <div class="container">
                 <div class="row justify-content-center">
                     <!-- <div class="col-md-6 text-center mb-5">
@@ -37,12 +38,14 @@
                                 <span class="fa fa-user-o"></span>
                             </div>
                             <h3 class="text-center mb-4">LOGIN</h3>
-                            <form action="#" class="login-form">
-                                <div class="form-group">
+                            <form action="{{route('postlogin')}}" class="login-form" method="post">
+                                {{@csrf_field()}}
+                                 <div class="form-group">
                                     <input
                                         type="text"
                                         class="form-control rounded-left"
-                                        placeholder="Username"
+                                        placeholder="email "
+                                        name="email"
                                         required
                                     />
                                 </div>
@@ -50,6 +53,7 @@
                                     <input
                                         type="password"
                                         class="form-control rounded-left"
+                                        name="password"
                                         placeholder="Password"
                                         required
                                     />
@@ -72,7 +76,7 @@
                                         type="submit"
                                         class="btn btn-primary rounded submit p-3 px-5"
                                     >
-                                        Get Started
+                                        Login
                                     </button>
                                 </div>
                             </form>
