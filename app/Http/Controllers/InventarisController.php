@@ -28,6 +28,11 @@ class InventarisController extends Controller
         return view('/admin/index_inventaris', compact('inventaris'));
     }
 
+    public function index2(){
+        $inventaris = Inventaris::all();
+        return view('/staff/list_inventaris', compact('inventaris'));
+    }
+
     public function destroy(Inventaris $inventaris){
         $inventaris->delete();
         return redirect()->back();

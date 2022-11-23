@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,7 @@ Route::get('/', function () {
 Route::get('/inventaris/create', [InventarisController::class, 'create']);
 Route::post('/inventaris', [InventarisController::class, 'store']);
 Route::get('/inventaris/list', [InventarisController::class,'index']);
+Route::get('/inventaris/data', [InventarisController::class,'index2']);
 Route::get('inventaris/{inventaris}/delete', [InventarisController::class, 'destroy']);
 Route::put('/inventaris/{inventaris}', [InventarisController::class, 'update']);
 Route::get('/inventaris/{inventaris}/edit', [InventarisController::class, 'edit']);
@@ -49,3 +51,4 @@ Route::put('/anggota/{anggota}', [AnggotaController::class, 'update']);
 Route::get('/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
 
 Route::get('/admin/admin', [AdminController::class, 'create']);
+Route::get('/staff/staff', [StaffController::class, 'create']);
