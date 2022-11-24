@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -17,14 +19,14 @@ class AuthController extends Controller
     {   
         Session ::flash('email',$request->email) ;  
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-
+            'email' => 'required', 
+            'password'=> 'required',
             
         ]);
+       
  
         if (Auth::attempt($credentials)) {
-            return redirect('inventaris/create');
+            return redirect('invertaris/create');
         }else{
             return view('auth.login');
         }
@@ -44,6 +46,36 @@ class AuthController extends Controller
 
     public function create(Request $request)
     {
-        return 123;
+        Session ::flash('name',$request->email) ; 
+        Session ::flash('email',$request->email) ;  
+        $request->validate([
+            'name'=> 'required',
+            'email' => 'required|email|unique', 
+            'password'=> 'required|min:6',
+            'role'
+            
+    
+        ]);
+        $data=[
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'role'=>Hash::make($request->role)
+        ];
+        User::create($data);
+
+        $infologin = [
+      
+            'email'=>$request->email,
+            'password'=>$request->password,
+           
+
+        ];
+ 
+        if (Auth::attempt($infologin)) {
+            return redirect('inventaris/create');
+        }else{
+            return view('auth.login');
+        }
     }
 }
