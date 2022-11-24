@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\AnggotaController;
@@ -7,27 +6,14 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Peminjaman_sewaController;
 use App\Http\Controllers\Detail_peminjaman_sewaController;
-use App\Models\Detail_peminjaman_sewa;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/inventaris/login', [AuthController::class, 'authenticate']);
 // Route::logout('/logout', [AuthController::class], 'logout');
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/inventaris/register', [AuthController::class, 'create']);
-
 
 Route::middleware('auth')->group(function () {
     
