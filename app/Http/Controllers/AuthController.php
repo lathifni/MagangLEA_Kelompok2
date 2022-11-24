@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -13,35 +16,66 @@ class AuthController extends Controller
     }
 
     public function authenticate(Request $request)
-    {
+    {   
+        Session ::flash('email',$request->email) ;  
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-
+            'email' => 'required', 
+            'password'=> 'required',
             
         ]);
+       
  
         if (Auth::attempt($credentials)) {
-
+            return redirect('invertaris/create');
+        }else{
+            return view('auth.login');
         }
  
     }
     // public function logout(Request $request)
     // {
     //     Auth::logout();
+    //     return view('auth.login');
 
-    //     $request->session()->invalidate();
-    //     $request->session()->regenerateToken();
     // } 
 
-    public function postlogin (Request $request)
+    public function register()
     {
-       // dd($request->all());
-       if(Auth::attempt($request->only('email','password')))
-       {
-        return view('/inventaris/create');
-       }
+        return view('auth.create');
+    }
 
-       return redirect('/inventaris/create');
+    public function create(Request $request)
+    {
+        Session ::flash('name',$request->email) ; 
+        Session ::flash('email',$request->email) ;  
+        $request->validate([
+            'name'=> 'required',
+            'email' => 'required|email|unique', 
+            'password'=> 'required|min:6',
+            'role'
+            
+    
+        ]);
+        $data=[
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'role'=>Hash::make($request->role)
+        ];
+        User::create($data);
+
+        $infologin = [
+      
+            'email'=>$request->email,
+            'password'=>$request->password,
+           
+
+        ];
+ 
+        if (Auth::attempt($infologin)) {
+            return redirect('inventaris/create');
+        }else{
+            return view('auth.login');
+        }
     }
 }
