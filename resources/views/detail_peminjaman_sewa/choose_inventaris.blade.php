@@ -13,22 +13,23 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Form Pemilihan Inventaris yang Dipinjam</h5>
-            <form action="" method="POST">
+            <form action="/detail_peminjaman_sewa/create?id={{$id}}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="name" class="col-md-4 col-form-label">Pilih Inventaris Ingin Dipinjam</label>
             
                     <div class="col-md-6">
-                        <select name="id_anggota" id="id_anggota" class="form-control">
+                        <select name="id_inventaris" id="id_inventaris" class="form-control">
                             <option value="">== Pilih Inventaris  ==</option>
-                            @foreach ($anggota as $row)
+                            @foreach ($inventaris as $row)
                                 <option value="{{ $row->id }}">{{ $row->nama }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
                    <div class="mb3">
-                       <br> <button type="submit" class="btn btn-success">Kirim</button>
+                       <br><a href="/index/peminjaman_sewa?id={{$id}}" class="btn btn-danger">Batal</a>
+                        <button type="submit" class="btn btn-success">Kirim</button>
                    </div>
             </form>
         </div>

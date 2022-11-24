@@ -7,7 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Peminjaman_sewaController;
 use App\Http\Controllers\Detail_peminjaman_sewaController;
-use App\Models\Detail_peminjaman_sewa;
+
 use Illuminate\Support\Facades\Route;
 
 /*

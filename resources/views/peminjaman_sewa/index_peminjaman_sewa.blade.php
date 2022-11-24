@@ -31,7 +31,7 @@
         </div>
     </div>
     <div>
-        <a href="/detail_peminjaman_sewa/create" target="blank">Tambah Inventaris Ingin Dipinjam</a>
+        <a href="/detail_peminjaman_sewa/create?id={{$id}}">Tambah Inventaris Ingin Dipinjam</a>
        <table class="table">
         <thead>
             <tr>
@@ -52,6 +52,9 @@
             @endforeach
         </tbody>
        </table>
+    </div>
+    <div>
+        <a href="https://google.com" class="btn btn-primary">Selesai</a>
     </div>
 </body>
 </html>

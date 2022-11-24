@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/peminjaman_sewa/create" method="post">
+    <form action="/peminjaman_sewa/create?id={{$id}}" method="post">
         @csrf
         <div class="row">
             <div class="col-lg-6">

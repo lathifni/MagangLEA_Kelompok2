@@ -11,7 +11,7 @@ class Detail_peminjaman_sewa extends Model
     protected $table = 'Detail_peminjaman_sewa';
     protected $guard = ['id'];
     protected $hidden = [];
-    protected $fillable = ['id_inventaris ', 'denda', 'keterangan'];
+    protected $fillable = ['id_inventaris', 'id_detail', 'denda', 'keterangan'];
 
     public function peminjaman_sewa(){
         return $this -> belongsTo(Peminjaman_sewa::class);
