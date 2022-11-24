@@ -17,16 +17,14 @@ class AuthController extends Controller
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
-            'role' =>['role']
+
+            
         ]);
  
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-           
-           return redirect()->intended('inventaris/create');
+
         }
  
-        return back();
     }
     // public function logout(Request $request)
     // {

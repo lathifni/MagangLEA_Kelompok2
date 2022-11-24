@@ -42,7 +42,7 @@
                                @csrf
                                  <div class="form-group">
                                     <input
-                                        type="text"
+                                        type="email"
                                         class="form-control rounded-left"
                                         placeholder="email "
                                         name="email"
@@ -80,11 +80,8 @@
                                     </button>
                                     <br>
                                     <br>
-                                    <br>    
-                                
-                                    <button type="button"
-                                        class="btn btn-primary rounded button p-3 px-5"
-                                    >Register</button>
+                                    <br>
+                                    <a href="">belum punya akun? create akun</a>
                                 </div>
                             </form>
                         </div>
