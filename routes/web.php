@@ -22,38 +22,37 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/login',[AuthController::class, 'login']);
 // Route::post('/logout', [AuthController::class], 'logout');
 
-Route::get('/', function(){
+Route::get('/', function () {
     return view('auth.login');
 });
-Route::post('/postlogin', 'AuthController@postlogin')->name('postlogin');
+Route::post('/postlogin', [AuthController::class, 'postlogin'])->name('postlogin');
 
-Route::middleware("auth")->group(function(){
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
 
-});
+
 
 Route::get('/inventaris/create', [InventarisController::class, 'create']);
 Route::post('/inventaris', [InventarisController::class, 'store']);
-Route::get('/inventaris/list', [InventarisController::class,'index']);
-Route::get('/inventaris/data', [InventarisController::class,'index2']);
+Route::get('/inventaris/list', [InventarisController::class, 'index']);
+Route::get('/inventaris/data', [InventarisController::class, 'index2']);
 Route::get('inventaris/{inventaris}/delete', [InventarisController::class, 'destroy']);
 Route::put('/inventaris/{inventaris}', [InventarisController::class, 'update']);
 Route::get('/inventaris/{inventaris}/edit', [InventarisController::class, 'edit']);
 
 Route::get('/admin/anggota/create', [AnggotaController::class, 'create']);
 Route::post('/admin/anggota', [AnggotaController::class, 'member']);
-Route::get('/admin/anggota/list', [AnggotaController::class,'index']);
+Route::get('/admin/anggota/list', [AnggotaController::class, 'index']);
 Route::get('/admin/anggota/{anggota}/delete', [AnggotaController::class, 'destroy']);
 Route::put('/admin/anggota/{anggota}', [AnggotaController::class, 'update']);
 Route::get('/admin/anggota/{anggota}/edit', [AnggotaController::class, 'edit']);
 
 Route::get('/staff/anggota/create', [AnggotaController::class, 'create1']);
 Route::post('/staff/anggota', [AnggotaController::class, 'member1']);
-Route::get('/staff/anggota/list', [AnggotaController::class,'index1']);
+Route::get('/staff/anggota/list', [AnggotaController::class, 'index1']);
 Route::get('/staff/anggota/{anggota}/delete', [AnggotaController::class, 'destroy1']);
 Route::put('/staff/anggota/{anggota}', [AnggotaController::class, 'update1']);
 Route::get('/staff/anggota/{anggota}/edit', [AnggotaController::class, 'edit1']);

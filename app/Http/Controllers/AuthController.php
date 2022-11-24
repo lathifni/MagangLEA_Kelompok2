@@ -43,6 +43,6 @@ class AuthController extends Controller
         return redirect('create_inventaris');
        }
 
-       return redirect('login');
+       return redirect('/login');
     }
 }
