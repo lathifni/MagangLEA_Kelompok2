@@ -51,7 +51,7 @@
                             <div>
                             <label for="role" class="form-labe">Role</label>
                                 <input type="text" class="form-control rounded-left" placeholder="role"
-                                    value="}" name="role"/>
+                                    value="" name="role"/>
                             </div>
                             <div class="form-group d-md-flex">
                                 <!-- <div class="w-50">
