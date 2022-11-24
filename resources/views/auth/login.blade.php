@@ -38,8 +38,8 @@
                                 <span class="fa fa-user-o"></span>
                             </div>
                             <h3 class="text-center mb-4">LOGIN</h3>
-                            <form action="{{route('postlogin')}}" class="login-form" method="post">
-                                {{@csrf_field()}}
+                            <form action="/login" class="login-form" method="post">
+                               @csrf
                                  <div class="form-group">
                                     <input
                                         type="text"
@@ -71,13 +71,20 @@
                                         <a href="#">Forgot Password</a>
                                     </div> -->
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group">   
                                     <button
                                         type="submit"
                                         class="btn btn-primary rounded submit p-3 px-5"
                                     >
                                         Login
                                     </button>
+                                    <br>
+                                    <br>
+                                    <br>    
+                                
+                                    <button type="button"
+                                        class="btn btn-primary rounded button p-3 px-5"
+                                    >Register</button>
                                 </div>
                             </form>
                         </div>
