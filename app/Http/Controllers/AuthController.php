@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -13,7 +14,8 @@ class AuthController extends Controller
     }
 
     public function authenticate(Request $request)
-    {
+    {   
+        Session ::flash('email',$request->email) ;  
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -22,26 +24,24 @@ class AuthController extends Controller
         ]);
  
         if (Auth::attempt($credentials)) {
-
+            return redirect('inventaris/create');
         }
  
     }
-    // public function logout(Request $request)
-    // {
-    //     Auth::logout();
-
-    //     $request->session()->invalidate();
-    //     $request->session()->regenerateToken();
-    // } 
-
-    public function postlogin (Request $request)
+    public function logout(Request $request)
     {
-       // dd($request->all());
-       if(Auth::attempt($request->only('email','password')))
-       {
-        return view('/inventaris/create');
-       }
+        Auth::logout();
+        return view('auth.login');
 
-       return redirect('/inventaris/create');
+    } 
+
+    public function register()
+    {
+        return view('auth.register');
+    }
+
+    public function create(Request $request)
+    {
+        return 123;
     }
 }

@@ -21,18 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/login', [AuthController::class, 'login']);
-Route::post('/login',[AuthController::class, 'authenticate']);
-// Route::post('/logout', [AuthController::class], 'logout');
-
-
-;
-
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
+Route::post('/inventaris/login',[AuthController::class, 'authenticate'])->name('login');
+Route::logout('/logout', [AuthController::class], 'logout');
+Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register',[AuthController::class, 'create']);
 
 
 Route::get('/inventaris/create', [InventarisController::class, 'create']);

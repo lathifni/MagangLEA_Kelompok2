@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -28,11 +28,16 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="fa fa-user-o"></span>
                         </div>
+                        <h3 class="text-center mb-4">Register</h3>
 
-                        <h3 class="text-center mb-4">LOGIN</h3>
-
-                        <form action="/inventaris/login" class="login-form" method="POST">
+                        <form action="/register" class="login-form" method="POST">
+                            
                             @csrf
+                            <div class="form-group">
+                                <label for="name" class="form-labe">name</label>
+                                <input type="text" class="form-control rounded-left" placeholder="name"
+                                    value="{{ Session::get('name') }}}" name="email" required />
+                            </div>
                             <div class="form-group">
                                 <input type="email" class="form-control rounded-left" placeholder="email "
                                     value="{{ Session::get('email') }}}" name="email" required />
@@ -56,12 +61,8 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary rounded submit p-3 px-5">
-                                    Login
+                                    Register
                                 </button>
-                                <br>
-                                <br>
-                                <br>
-                                <a href="">belum punya akun? create akun</a>
                             </div>
                         </form>
                     </div>
