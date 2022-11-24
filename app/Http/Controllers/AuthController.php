@@ -12,6 +12,29 @@ class AuthController extends Controller
         return view("auth.login");
     }
 
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+            'role' =>['role']
+        ]);
+ 
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+           
+           return redirect()->intended('inventaris/create');
+        }
+ 
+        return back();
+    }
+    // public function logout(Request $request)
+    // {
+    //     Auth::logout();
+
+    //     $request->session()->invalidate();
+    //     $request->session()->regenerateToken();
+    // } 
 
     public function postlogin (Request $request)
     {
