@@ -38,13 +38,23 @@ class Peminjaman_sewaController extends Controller
     public function storeCreate (Request $request) {
         $id = $request->query('id');
 
-        $validated = $request -> validate([
-            'tanggal_transaksi_pengembalian' => 'required',
-            'tanggal_dikembalikan' => 'required',
-            'id_anggota' => 'required'
-        ]);
-	    $validated["tanggal_transaksi"] = date('Y-m-d');
-        Peminjaman_sewa::create($validated);
-        return redirect()->back();
+        // $validated = $request -> validate([
+        //     'tanggal_transaksi_pengembalian' => 'required',
+        //     'tanggal_dikembalikan' => 'required',
+        //     'id_anggota' => 'required'
+        // ]);
+	    // $validated["tanggal_transaksi"] = date('Y-m-d');
+        // Peminjaman_sewa::create($validated);
+        return redirect()->route('index/peminjaman_sewa', ['id' => $id]);
+    }
+
+    public function index (Request $request){
+        $id = $request->query('id');
+
+        $listPinjaman = Peminjaman_sewa::join("detail_peminjaman_sewa", "detail_peminjaman_sewa.id", "=", "peminjaman_sewa.id_anggota" )
+                        ->where("peminjaman_sewa.id", "{$id}")
+                        ->get(['']);
+
+        return view('peminjaman_sewa.index_peminjaman_sewa', compact('listPinjaman'));
     }
 }
