@@ -31,11 +31,11 @@
 
                         <h3 class="text-center mb-4">LOGIN</h3>
 
-                        <form action="/inventaris/login" class="login-form" method="POST">
+                        <form action="/inventaris/login" class="login-form" method="post">
                             @csrf
                             <div class="form-group">
                                 <input type="email" class="form-control rounded-left" placeholder="email "
-                                    value="{{ Session::get('email') }}}" name="email" required />
+                                    value="{{ Session::get('email') }}" name="email" required />
                             </div>
                             <div class="form-group d-flex">
                                 <input type="password" class="form-control rounded-left" name="password"

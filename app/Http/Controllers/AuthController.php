@@ -25,19 +25,21 @@ class AuthController extends Controller
  
         if (Auth::attempt($credentials)) {
             return redirect('inventaris/create');
+        }else{
+            return view('auth.login');
         }
  
     }
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        return view('auth.login');
+    // public function logout(Request $request)
+    // {
+    //     Auth::logout();
+    //     return view('auth.login');
 
-    } 
+    // } 
 
     public function register()
     {
-        return view('auth.register');
+        return view('auth.create');
     }
 
     public function create(Request $request)

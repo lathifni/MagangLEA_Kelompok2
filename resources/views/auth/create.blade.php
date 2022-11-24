@@ -30,21 +30,28 @@
                         </div>
                         <h3 class="text-center mb-4">Register</h3>
 
-                        <form action="/register" class="login-form" method="POST">
+                        <form action="/inventaris/register" class="login-form" method="post">
                             
                             @csrf
                             <div class="form-group">
-                                <label for="name" class="form-labe">name</label>
+                                <label for="name" class="form-labe">Name :</label>
                                 <input type="text" class="form-control rounded-left" placeholder="name"
-                                    value="{{ Session::get('name') }}}" name="email" required />
+                                    value="{{ Session::get('name') }}" name="email" required />
                             </div>
                             <div class="form-group">
+                                <label for="email" class="form-labe">Email :</label>
                                 <input type="email" class="form-control rounded-left" placeholder="email "
-                                    value="{{ Session::get('email') }}}" name="email" required />
+                                    value="{{ Session::get('email') }}" name="email" required />
                             </div>
-                            <div class="form-group d-flex">
+                            <div class="form-group">
+                                <label for="password" class="form-labe">Password : </label>
                                 <input type="password" class="form-control rounded-left" name="password"
                                     placeholder="Password" required />
+                            </div>
+                            <div>
+                            <label for="role" class="form-labe">Role</label>
+                                <input type="text" class="form-control rounded-left" placeholder="role"
+                                    value="{{ Session::get('role') }}" name="role"/>
                             </div>
                             <div class="form-group d-md-flex">
                                 <!-- <div class="w-50">
