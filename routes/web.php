@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Peminjaman_sewaController;
 use App\Http\Controllers\Detail_peminjaman_sewaController;
+use App\Http\Controllers\PengembalianController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/inventaris/register', [AuthController::class, 'create']);
 
 //Route::middleware('auth')->group(function () {
-    
+
     Route::get('/inventaris/create', [InventarisController::class, 'create']);
     Route::post('/inventaris', [InventarisController::class, 'store']);
     Route::get('/inventaris/list', [InventarisController::class, 'index']);
@@ -52,4 +53,6 @@ Route::post('/inventaris/register', [AuthController::class, 'create']);
 
     route::get('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'create'])->name('detail_peminjaman_sewa/create_g');
     route::post('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('detail_peminjaman_sewa/create_p');
+
+    Route::get('/pengembalian/list', [PengembalianController::class, 'index']);
 //});

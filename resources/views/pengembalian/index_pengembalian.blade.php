@@ -84,14 +84,14 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        {{-- <li class="nav-item hidden-xs-down search-box"> <a
+                        <li class="nav-item hidden-xs-down search-box"> <a
                                 class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
                                     class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a
                                     class="srh-btn"><i class="ti-close"></i></a>
                             </form>
-                        </li> --}}
+                        </li>
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
@@ -115,18 +115,21 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="/staff/staff" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/inventaris/data" aria-expanded="false"><i
-                            class="mdi mdi-account-check"></i><span class="hide-menu">Inventaris</span></a></li>
+                        {{-- <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
+                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li> --}}
+                <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
+                            class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
+                            class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
                             class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
                             class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/staff/anggota/list" aria-expanded="false"><i
+                <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
                             class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
                             class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                    </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -148,7 +151,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Tambah Data Anggota</h3>
+                        <h3 class="text">Data Pengembalian</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -162,36 +165,42 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/staff/anggota" method="post">
-                                        @csrf
-                                    <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label" id="nama">Nama Anggota</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama Anggota" name="nama">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="no_hp">Nomor HP</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan No.HP Anggota" name="no_hp">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="email">Email</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Email Anggota" name="email">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="alamat">Alamat</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Alamat Anggota" name="alamat">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="status" class="form-label">Jenis Kelamin</label>
-                                        <select name="jenis_kelamin" id="jenis_kelamin">
-                                          <option value="laki-laki">Laki-Laki</option>
-                                          <option value="perempuan">Perempuan</option>
-                                        </select>
-                                    </div>
-                                      <div class="mb-3">
-                                        <button type="submit" class="btn btn-success">Submit</button>
-                                      </div>
-                                </div>
-                                </form>
+
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Nama Anggota</th>
+                                            <th scope="col">Tanggal Peminjaman</th>
+                                            <th scope="col">Tanggal Pengembalian</th>
+                                            <th scope="col">Tanggal Dikembalikan</th>
+
+                                            <th scope="col">Keterangan</th>
+                                            <th scope="col">Aksi</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($listPinjaman as $a )
+                                          <tr>
+                                            <th scope="row">{{$loop->iteration}}</th>
+                                            <td>{{$a->nama}}</td>
+                                            <td>{{$a->tanggal_transaksi}}</td>
+                                            <td>{{$a->tanggal_transaksi_pengembalian}}</td>
+                                            <td>{{$a->tanggal_dikembalikan}}</td>
+
+                                            <td>{{$a->keterangan}}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                    Kembali
+                                                  </button>
+
+                                            </td>
+
+                                            @endforeach
+                                          </tr>
+                                        </tbody>
+                                      </table>
+
                                 </div>
                             </div>
                         </div>
@@ -215,6 +224,7 @@
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
+
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
