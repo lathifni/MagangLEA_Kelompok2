@@ -16,4 +16,8 @@ class Detail_peminjaman_sewa extends Model
     public function peminjaman_sewa(){
         return $this -> belongsTo(Peminjaman_sewa::class);
     }
+
+    public function inventaris(){
+        return $this -> belongsTo(Inventaris::class);
+    }
 }

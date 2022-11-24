@@ -12,4 +12,8 @@ class Inventaris extends Model
     protected $guard = ['id'];
     protected $hidden = [];
     protected $fillable = ['nama', 'harga', 'kategori', 'status', 'tersedia'];
+
+    public function detail_peminjaman_sewa(){
+        return $this -> hasMany(Inventaris::class);
+    }
 }

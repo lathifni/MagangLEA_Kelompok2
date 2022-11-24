@@ -6,6 +6,8 @@ use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Peminjaman_sewaController;
+use App\Http\Controllers\Detail_peminjaman_sewaController;
+use App\Models\Detail_peminjaman_sewa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,4 +63,10 @@ Route::get('/staff/staff', [StaffController::class, 'create']);
 Route::get('/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate']);
 Route::get('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('peminjaman_sewa/create_g');
 Route::post('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'storeCreate'])->name('peminjaman_sewa/create_p');
-Route::get('/peminjaman_sewaa', [Peminjaman_sewaController::class, 'create']);
+Route::get('/index/peminjaman_sewa', [Peminjaman_sewaController::class, 'index'])->name('index/peminjaman_sewa');
+
+route::get('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'create'])->name('detail_peminjaman_sewa/create_g');
+route::post('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('detail_peminjaman_sewa/create_p');
+
+route::get('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'create'])->name('detail_peminjaman_sewa/create_g');
+route::post('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('detail_peminjaman_sewa/create_p');
