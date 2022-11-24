@@ -15,7 +15,7 @@ Route::post('/inventaris/login', [AuthController::class, 'authenticate']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/inventaris/register', [AuthController::class, 'create']);
 
-Route::middleware('auth')->group(function () {
+//Route::middleware('auth')->group(function () {
     
     Route::get('/inventaris/create', [InventarisController::class, 'create']);
     Route::post('/inventaris', [InventarisController::class, 'store']);
@@ -52,4 +52,4 @@ Route::middleware('auth')->group(function () {
 
     route::get('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'create'])->name('detail_peminjaman_sewa/create_g');
     route::post('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('detail_peminjaman_sewa/create_p');
-});
+//});
