@@ -62,11 +62,6 @@ Route::get('/admin/admin', [AdminController::class, 'create']);
 Route::get('/staff/staff', [StaffController::class, 'create']);
 
 Route::get('/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate']);
-<<<<<<< HEAD
 Route::get('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('peminjaman_sewa/create_g');
 Route::post('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'storeCreate'])->name('peminjaman_sewa/create_p');
 Route::get('/peminjaman_sewaa', [Peminjaman_sewaController::class, 'create']);
-=======
-Route::get('/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('peminjaman_sewa/create');
-Route::get('/peminjaman_sewaa', [Peminjaman_sewaController::class, 'create']);
->>>>>>> 50bbc43f348de2a7a9ba9a51eb64f014ea23db0b
