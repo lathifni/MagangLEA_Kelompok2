@@ -12,7 +12,7 @@ class PengembalianController extends Controller
     public function index (Request $request){
 
         $listPinjaman = Peminjaman_sewa::join("anggota", "anggota.id", "=", "peminjaman_sewa.id_anggota" )
-                        ->get(['peminjaman_sewa.*']);
+                        ->get(['peminjaman_sewa.*', 'anggota.nama']);
 
         return view('pengembalian/index_pengembalian', compact('listPinjaman'));
     }
