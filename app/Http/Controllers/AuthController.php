@@ -16,22 +16,20 @@ class AuthController extends Controller
     }
 
     public function authenticate(Request $request)
-    {   
-        Session ::flash('email',$request->email) ;  
+    {
+        Session::flash('email', $request->email);
         $credentials = $request->validate([
-            'email' => 'required', 
-            'password'=> 'required',
-            
+            'email' => 'required',
+            'password' => 'required',
+
         ]);
-       
- 
+
+
         if (Auth::attempt($credentials)) {
             return redirect('invertaris/create');
-        }else{
+        } else {
             return view('auth.login');
         }
-        
- 
     }
     // public function logout(Request $request)
     // {
@@ -47,36 +45,34 @@ class AuthController extends Controller
 
     public function create(Request $request)
     {
-        Session ::flash('name',$request->email) ; 
-        Session ::flash('email',$request->email) ;  
+        Session::flash('name', $request->email);
+        Session::flash('email', $request->email);
         $request->validate([
-            'name'=> 'required',
-            'email' => 'required|email|unique', 
-            'password'=> 'required|min:6',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
             'role'
-            
-    
+
+
         ]);
-        $data=[
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>Hash::make($request->password),
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
             'role'
         ];
         User::create($data);
+        
 
         $infologin = [
-      
-            'email'=>$request->email,
-            'password'=>$request->password,
-           
-
+            'email' => $request->email,
+            'password' => $request->password,
         ];
- 
+
         if (Auth::attempt($infologin)) {
-            return redirect('inventaris/create');
-        }else{
-            return view('auth.login');
+            return redirect('/inventaris/create')->with('sucsess');
+        } else {
+            return redirect('auth.login')->withErrors('gagal');
         }
     }
 }
