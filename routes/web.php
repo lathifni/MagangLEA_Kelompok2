@@ -7,7 +7,6 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Peminjaman_sewaController;
 use App\Http\Controllers\Detail_peminjaman_sewaController;
 use App\Http\Controllers\PengembalianController;
-use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AuthController::class, 'login']);
