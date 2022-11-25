@@ -10,13 +10,16 @@ use Illuminate\Support\Facades\DB;
 class PengembalianController extends Controller
 {
     public function index (Request $request){
-        $id = $request->query('id');
 
         $listPinjaman = Peminjaman_sewa::join("anggota", "anggota.id", "=", "peminjaman_sewa.id_anggota" )
-                        ->get();
+                        ->get(['peminjaman_sewa.*']);
 
-        return view('pengembalian/index_pengembalian', compact('listPinjaman'), ['id' => $id]);
+        return view('pengembalian/index_pengembalian', compact('listPinjaman'));
     }
 
+    public function process (Request $request){
+        $id = $request->query('id');
 
+        return view('pengembalian/process_pengembalian', ['id' => $id]);
+    }
 }

@@ -55,4 +55,5 @@ Route::post('/inventaris/register', [AuthController::class, 'create']);
     route::post('/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('detail_peminjaman_sewa/create_p');
 
     Route::get('/pengembalian/list', [PengembalianController::class, 'index']);
+    Route::get('/pengembalian', [PengembalianController::class, 'process']);
 //});

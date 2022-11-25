@@ -174,8 +174,7 @@
                                             <th scope="col">Tanggal Peminjaman</th>
                                             <th scope="col">Tanggal Pengembalian</th>
                                             <th scope="col">Tanggal Dikembalikan</th>
-
-                                            <th scope="col">Keterangan</th>
+                                            <th scope="col">Status Pinjam</th>
                                             <th scope="col">Aksi</th>
                                           </tr>
                                         </thead>
@@ -187,15 +186,10 @@
                                             <td>{{$a->tanggal_transaksi}}</td>
                                             <td>{{$a->tanggal_transaksi_pengembalian}}</td>
                                             <td>{{$a->tanggal_dikembalikan}}</td>
-
-                                            <td>{{$a->keterangan}}</td>
+                                            <td>{{$a->status_pinjam}}</td>
                                             <td>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                                    Kembali
-                                                  </button>
-
+                                                  <a href="/pengembalian?id={{$a->id}}" class="btn btn-primary">Dikembalikan</a>
                                             </td>
-
                                             @endforeach
                                           </tr>
                                         </tbody>
