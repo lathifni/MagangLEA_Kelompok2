@@ -17,16 +17,25 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        // User::create([
 
-            "name" => "gilang",
-            "email" => "gilang@gmail.com",
-            "password" => Hash::make("rahasia"),
-            "role" => "admin",
-            "alamat" => "labuang",
-            "no_hp" => "0852074953262",
-            "jenis_kelamin" => "laki-laki"
+        //     "name" => "gilang",
+        //     "email" => "gilang@gmail.com",
+        //     "password" => Hash::make("rahasia"),
+        //     "role" => "admin",
+        //     "alamat" => "labuang",
+        //     "no_hp" => "0852074953262",
+        //     "jenis_kelamin" => "laki-laki"
 
+        // ]);
+        DB::table('users')->insert([
+            'name' => 'gilang',
+            'email' => 'gilang@gmail.com',
+            'password' => Hash::make('123123'),
+            'role'=> 'admin',
+            'alamat' =>'labuang',
+            'no_hp'=> '0852074953262',
+            'jenis_kelamin'=>'perempuan'
         ]);
     }
 }
