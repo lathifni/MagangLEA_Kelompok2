@@ -30,6 +30,7 @@ class AuthController extends Controller
         }else{
             return view('auth.login');
         }
+        
  
     }
     // public function logout(Request $request)
