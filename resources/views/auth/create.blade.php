@@ -36,12 +36,12 @@
                             <div class="form-group">
                                 <label for="name" class="form-labe" id="name">Name :</label>
                                 <input type="text" class="form-control rounded-left" placeholder="name"
-                                    value="{{ Session::get('name') }}" name="email" required />
+                                     name="name" required />
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-labe" id="email">Email :</label>
                                 <input type="email" class="form-control rounded-left" placeholder="email "
-                                    value="{{ Session::get('email') }}" name="email" required />
+                                    name="email" required />
                             </div>
                             <div class="form-group">
                                 <label for="password" class="form-labe" id="password" >Password : </label>
@@ -50,7 +50,7 @@
                             </div>
                             <div>
                                 <label for="role" class="form-labe" id="role" >Role :</label>
-                                <select name="jenis_kelamin" class="form-control rounded-left" id="role">
+                                <select name="role" class="form-control rounded-left" id="role">
                                     <option value="admin">Admin</option>
                                     <option value="staff">Staff</option>
                                   </select>
@@ -58,17 +58,17 @@
                             <div>
                                 <label for="alamat" class="form-labe" id="alamat" >Alamat :</label>
                                 <input type="text" class="form-control rounded-left" placeholder="alamat"
-                                    value="" name="alamat"/>
+                                     name="alamat"/>
                             </div>
                             <div>
                                 <label for="no_hp" class="form-labe" id="no_hp">No. HP :</label>
                                 <input type="text" class="form-control rounded-left" placeholder="no.hp"
-                                    value="" name="no_hp"/>
+                                     name="no_hp"/>
                             </div>
                             <div>
                                 <label for="jenis_kelamin" class="form-labe" id="jenis_kelamin">Jenis Kelamin :</label>
                                 <input type="text" class="form-control rounded-left" placeholder="jenis kelamin"
-                                    value="" name="jenis_kelamin"/>
+                                     name="jenis_kelamin"/>
                             </div>
                             <div class="form-group d-md-flex">
                                 <!-- <div class="w-50">

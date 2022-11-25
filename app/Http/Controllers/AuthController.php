@@ -22,17 +22,21 @@ class AuthController extends Controller
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
+        ],[
+            'email.required'=>'email tidak boleh kosong',
+            'password.required'=>'password tidak boleh kosong'
         ]);
+        
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect()->intended('/inventaris/create');
-        }
+        }else{
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        return redirect('login')->withErrors('email user dan password yang anda masukkan salah');
+           
+        }
 
         //====================================================================== 
         //Versi Youtube   
@@ -66,15 +70,15 @@ class AuthController extends Controller
 
     public function create(Request $request)
     {   
-        $validated= $request->validate([
-            'name'=>'required',
-            'email'=>'required',
-            'password'=>'required',
-            'role'=>'required',
-            'alamat'=>'required',
-            'no_hp'=>'required',
-            'jenis_kelamin'=>'required',
-        ]);
+        // $validated= $request->validate([
+        //     'name'=>'required',
+        //     'email'=>'required',
+        //     'password'=>'required',
+        //     'role'=>'required',
+        //     'alamat'=>'required',
+        //     'no_hp'=>'required',
+        //     'jenis_kelamin'=>'required',
+        // ]);
         $data = [
             'name' => $request->name,
             'email' => $request->email,
@@ -84,7 +88,7 @@ class AuthController extends Controller
             'no_hp'=>$request->no_hp,
             'jenis_kelamin'=>$request->jenis_kelamin
         ];
-        User::create($validated);
-        return redirect()->back();
+        User::create($data);
+        return redirect('/login');
     }
 }
