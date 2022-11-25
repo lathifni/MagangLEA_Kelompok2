@@ -64,35 +64,26 @@ class AuthController extends Controller
     }
 
     public function create(Request $request)
-    {
-        Session::flash('name', $request->email);
-        Session::flash('email', $request->email);
+    {   
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6',
-            'role'
-
-
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'role'=>'required',
+            'alamat'=>'required',
+            'no_hp'=>'required',
+            'jenis_kelamin'=>'required',
         ]);
         $data = [
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role'
+            'role'=>$request->role,
+            'alamat'=>$request->alamat,
+            'no_hp'=>$request->no_hp,
+            'jenis_kelamin'=>$request->jenis_kelamin
         ];
         User::create($data);
-
-
-        $infologin = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
-
-        if (Auth::attempt($infologin)) {
-            return redirect('/inventaris/create')->with('sucsess');
-        } else {
-            return redirect('auth.login')->withErrors('gagal');
-        }
+        return redirect('login');
     }
 }
