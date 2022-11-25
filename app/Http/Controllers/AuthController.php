@@ -66,7 +66,7 @@ class AuthController extends Controller
 
     public function create(Request $request)
     {   
-        $request->validate([
+        $validated= $request->validate([
             'name'=>'required',
             'email'=>'required',
             'password'=>'required',
@@ -84,8 +84,7 @@ class AuthController extends Controller
             'no_hp'=>$request->no_hp,
             'jenis_kelamin'=>$request->jenis_kelamin
         ];
-        DB::table('users')->insert($data);
-        User::create($data);
-        return redirect('login');
+        User::create($validated);
+        return redirect()->back();
     }
 }
