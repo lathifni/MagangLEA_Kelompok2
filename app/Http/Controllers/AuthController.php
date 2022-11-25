@@ -17,19 +17,39 @@ class AuthController extends Controller
 
     public function authenticate(Request $request)
     {
-        Session::flash('email', $request->email);
-        $credentials = $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+        
+            $credentials = $request->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ]);
+     
+            if (Auth::attempt($credentials)) {
+                $request->session()->regenerate();
+     
+                return redirect()->intended('inventaris/create');
+            }
+     
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ])->onlyInput('email');
+        
+        //====================================================================== 
+         //Versi Youtube   
+        //======================================================================
+        // Session::flash('email', $request->email);
+        // $credentials = $request->validate([
+        //     'email' => 'required',
+        //     'password' => 'required',
 
-        ]);
+        // ]);
 
 
-        if (Auth::attempt($credentials)) {
-            return redirect('invertaris/create');
-        } else {
-            return view('auth.login');
-        }
+        // if (Auth::attempt($credentials)) {
+        //     return redirect('invertaris/create');
+        // } else {
+        //     return view('auth.login');
+        // }
+     //----------------------------------------------------------------------   
     }
     // public function logout(Request $request)
     // {
