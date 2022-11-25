@@ -20,7 +20,6 @@ class UserSeeder extends Seeder
             'name' => 'Gilang',
             'email' => 'gilang@gmail.com',
             'password' => Hash::make('123456'),
-            'role' => 'admin'
 
 
         ]);
