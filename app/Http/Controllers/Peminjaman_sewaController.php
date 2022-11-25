@@ -29,6 +29,7 @@ class Peminjaman_sewaController extends Controller
             'id_anggota' => 'required'
         ]);
 	    $validated["tanggal_transaksi"] = date('Y-m-d');
+        $validated["status_pinjam"] = 'sedang dipinjam';
         Peminjaman_sewa::create($validated);
         return redirect()->route('index/peminjaman_sewa', ['id' => $id]);
     }
