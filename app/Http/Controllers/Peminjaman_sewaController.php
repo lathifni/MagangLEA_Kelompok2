@@ -38,7 +38,7 @@ class Peminjaman_sewaController extends Controller
         $id = $request->query('id');
 
         $listPinjaman = Detail_peminjaman_sewa::join("inventaris", "inventaris.id", "=", "detail_peminjaman_sewa.id_inventaris" )
-                        ->where("detail_peminjaman_sewa.id", $id)
+                        ->where("detail_peminjaman_sewa.id_detail", $id)
                         ->get(['inventaris.*']);
 
         return view('peminjaman_sewa.index_peminjaman_sewa', compact('listPinjaman'), ['id' => $id]);
