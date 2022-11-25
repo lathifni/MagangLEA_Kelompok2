@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\AnggotaController;
@@ -9,13 +10,13 @@ use App\Http\Controllers\Detail_peminjaman_sewaController;
 use App\Http\Controllers\PengembalianController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'login'])->name("login");
 Route::post('/inventaris/login', [AuthController::class, 'authenticate']);
 // Route::logout('/logout', [AuthController::class], 'logout');
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/inventaris/register', [AuthController::class, 'create']);
 
-//Route::middleware('auth')->group(function () {
+Route::middleware("auth")->group(function () {
 
     Route::get('/inventaris/create', [InventarisController::class, 'create']);
     Route::post('/inventaris', [InventarisController::class, 'store']);
@@ -55,4 +56,4 @@ Route::post('/inventaris/register', [AuthController::class, 'create']);
 
     Route::get('/pengembalian/list', [PengembalianController::class, 'index']);
     Route::get('/pengembalian', [PengembalianController::class, 'process']);
-//});
+    });

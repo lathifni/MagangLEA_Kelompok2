@@ -17,24 +17,24 @@ class AuthController extends Controller
 
     public function authenticate(Request $request)
     {
-        
-            $credentials = $request->validate([
-                'email' => ['required', 'email'],
-                'password' => ['required'],
-            ]);
-     
-            if (Auth::attempt($credentials)) {
-                $request->session()->regenerate();
-     
-                return redirect()->intended('inventaris/create');
-            }
-     
-            return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
-            ])->onlyInput('email');
-        
+
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/inventaris/create');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+
         //====================================================================== 
-         //Versi Youtube   
+        //Versi Youtube   
         //======================================================================
         // Session::flash('email', $request->email);
         // $credentials = $request->validate([
@@ -49,7 +49,7 @@ class AuthController extends Controller
         // } else {
         //     return view('auth.login');
         // }
-     //----------------------------------------------------------------------   
+        //----------------------------------------------------------------------   
     }
     // public function logout(Request $request)
     // {
@@ -82,7 +82,7 @@ class AuthController extends Controller
             'role'
         ];
         User::create($data);
-        
+
 
         $infologin = [
             'email' => $request->email,
