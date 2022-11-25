@@ -164,7 +164,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/anggota" method="post">
+                                    <form action="/admin/anggota" method="post">
                                         @csrf
                                     <div class="mb-3">
                                         <label for="formGroupExampleInput" class="form-label" id="nama">Nama Anggota</label>
