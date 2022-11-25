@@ -61,7 +61,7 @@
                                 <br>
                                 <br>
                                 <br>
-                                <a href="http://127.0.0.1:8000/register">belum punya akun? create akun</a>
+                                <a href="http://127.0.0.1:8000/register">don't have an account? create akun</a>
                             </div>
                         </form>
                     </div>
