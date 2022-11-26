@@ -20,7 +20,7 @@ class PengembalianController extends Controller
     public function process (Request $request){
         $id = $request->query('id');
         $pinjaman = Detail_peminjaman_sewa::join("inventaris", "inventaris.id", "=", "detail_peminjaman_sewa.id_inventaris" )
-                    ->where("detail_peminjaman_sewa.id", $id)
+                    ->where("id_detail", $id)
                     ->get(['detail_peminjaman_sewa.*', 'inventaris.nama']);
 
                         return view('admin/process_pengembalian', compact('pinjaman'));
