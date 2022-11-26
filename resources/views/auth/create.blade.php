@@ -69,7 +69,7 @@
                                 <label for="jenis_kelamin" class="form-labe" id="jenis_kelamin">Jenis Kelamin :</label>
                                 <select name="jenis_kelamin" class="form-control rounded-left" id="jenis_kelamin">
                                     <option value="admin">Laki-laki</option>
-                                    <option value="staff">{erempuan</option>
+                                    <option value="staff">Perempuan</option>
                                   </select>
                                      
                             </div>
