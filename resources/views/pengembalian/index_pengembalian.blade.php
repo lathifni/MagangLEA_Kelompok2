@@ -188,7 +188,7 @@
                                             <td>{{$a->tanggal_dikembalikan}}</td>
                                             <td>{{$a->status_pinjam}}</td>
                                             <td>
-                                                  <a href="/pengembalian?id={{$a->id}}" class="btn btn-primary">Dikembalikan</a>
+                                                  <a href="/pengembalian?id={{$a->id}}" class="btn btn-primary">Kembalikan</a>
                                             </td>
                                             @endforeach
                                           </tr>

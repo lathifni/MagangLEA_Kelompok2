@@ -57,6 +57,7 @@ Route::middleware("auth")->group(function () {
 
     Route::get('/pengembalian/list', [PengembalianController::class, 'index']);
     Route::get('/pengembalian', [PengembalianController::class, 'process']);
+   
 
     Route::get('/user/list', [AuthController::class,  'store']);
     Route::get('/user/{user}/delete', [AuthController::class, 'destroy']);
