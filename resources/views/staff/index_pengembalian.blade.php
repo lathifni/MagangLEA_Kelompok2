@@ -115,20 +115,18 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        {{-- <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li> --}}
-                <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
-                            class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
-                            class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/peminjaman_sewa" aria-expanded="false"><i
-                            class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
-                            class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
-                            class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                            class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/staff/staff" aria-expanded="false"><i
+                                    class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/inventaris/data" aria-expanded="false"><i
+                                    class="mdi mdi-account-check"></i><span class="hide-menu">Inventaris</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/staff/peminjaman_sewa" aria-expanded="false"><i
+                                    class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/staff/pengembalian/list" aria-expanded="false"><i
+                                    class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/staff/anggota/list" aria-expanded="false"><i
+                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                                    class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -151,7 +149,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Detail Pengembalian</h3>
+                        <h3 class="text">Data Pengembalian</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -165,38 +163,35 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/pengembalian/list" method="post">
-                                        @csrf
-                                        @method("put")
-                                        <table class="table">
-                                            <thead>
-                                              <tr>
-                                                <th scope="col">Nama Inventaris</th>
-                                                <th scope="col">Keterangan</th>
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($pinjaman as $a )
-                                              <tr>
-                                                {{-- <th scope="row">{{$loop->iteration}}</th> --}}
-                                                <td>{{$a->nama}}</td>
-                                                {{-- <td>{{$a->denda}}</td> --}}
-                                                <td>
-                                                    <select name="keterangan" id="keterangan">
-                                                      <option value="Null">Kondisi</option>
-                                                      <option value="Baik">Baik</option>
-                                                      <option value="Rusak">Rusak</option>
-                                                      <option value="Hilang">Hilang</option>
-                                                    </select>
-                                                </td>
-                                                @endforeach
-                                                <div class="mb3">
-                                                    <button type="submit" class="btn btn-success">Kembalikan</button>
-                                                </div>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                    </form>
+
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Nama Anggota</th>
+                                            <th scope="col">Tanggal Peminjaman</th>
+                                            <th scope="col">Tanggal Pengembalian</th>
+                                            <th scope="col">Tanggal Dikembalikan</th>
+                                            <th scope="col">Status Pinjam</th>
+                                            <th scope="col">Aksi</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($listPinjaman as $a )
+                                          <tr>
+                                            <th scope="row">{{$loop->iteration}}</th>
+                                            <td>{{$a->nama}}</td>
+                                            <td>{{$a->tanggal_transaksi}}</td>
+                                            <td>{{$a->tanggal_transaksi_pengembalian}}</td>
+                                            <td>{{$a->tanggal_dikembalikan}}</td>
+                                            <td>{{$a->status_pinjam}}</td>
+                                            <td>
+                                                  <a href="/admin/pengembalian?id={{$a->id}}" class="btn btn-primary">Kembalikan</a>
+                                            </td>
+                                            @endforeach
+                                          </tr>
+                                        </tbody>
+                                      </table>
 
                                 </div>
                             </div>
@@ -247,11 +242,6 @@
     <script src="{{ asset('../js/waves.js')}}"></script>
     <script src="{{ asset('../js/sidebarmenu.js')}}"></script>
     <script src="{{ asset('../js/custom.min.js')}}"></script>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 
 </body>
 

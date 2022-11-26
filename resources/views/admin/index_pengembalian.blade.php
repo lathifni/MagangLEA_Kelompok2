@@ -117,18 +117,20 @@
                     <ul id="sidebarnav">
                         {{-- <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
                             class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li> --}}
-                <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
-                            class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
-                            class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/peminjaman_sewa" aria-expanded="false"><i
-                            class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
-                            class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
-                            class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                            class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                            <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
+                                class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
+                                class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
+                                class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/admin/pengembalian/list" aria-expanded="false"><i
+                                class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
+                                class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                                class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -188,7 +190,7 @@
                                             <td>{{$a->tanggal_dikembalikan}}</td>
                                             <td>{{$a->status_pinjam}}</td>
                                             <td>
-                                                  <a href="/pengembalian?id={{$a->id}}" class="btn btn-primary">Kembalikan</a>
+                                                  <a href="/admin/pengembalian?id={{$a->id}}" class="btn btn-primary">Kembalikan</a>
                                             </td>
                                             @endforeach
                                           </tr>

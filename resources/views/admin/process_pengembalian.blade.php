@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Pinjam-Sewa</title>
+    <title>Dashboard</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -114,19 +114,23 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="/staff/staff" aria-expanded="false"><i
-                                    class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/inventaris/data" aria-expanded="false"><i
-                                    class="mdi mdi-account-check"></i><span class="hide-menu">Inventaris</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/staff/peminjaman_sewa" aria-expanded="false"><i
-                                    class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/staff/pengembalian/list" aria-expanded="false"><i
-                                    class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/staff/anggota/list" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                                    class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                    <ul id="sidebarnav">
+                        {{-- <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
+                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li> --}}
+                            <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
+                                class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
+                                class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
+                                class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/admin/pengembalian/list" aria-expanded="false"><i
+                                class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
+                                class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
+                    <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                                class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -149,7 +153,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Pinjam-Sewa</h3>
+                        <h3 class="text">Detail Pengembalian</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -162,48 +166,41 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                            <div class="container mt-5">
-                                <h5 class="card-title">Form Awal Peminjaman</h5>
-                                <form action="/staff/peminjaman_sewa/create?id={{$id}}" method="post">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                         <div class="form-group">
-                                          <br><label>Tanggal Peminjaman</label>
-                                          <div class="input-group date">
-                                           <div class="input-group-addon">
-                                                  <span class="glyphicon glyphicon-th"></span>
-                                              </div>
-                                              <input placeholder="Tanggal Peminjaman" type="date" class="form-control datepicker" name="tanggal_transaksi_pengembalian" value="">
-                                          </div>
-                                         </div>
-                                         <div class="form-group">
-                                          <br><label>Tanggal Pengembalian</label>
-                                          <div class="input-group date">
-                                           <div class="input-group-addon">
-                                                  <span class="glyphicon glyphicon-th"></span>
-                                              </div>
-                                              <input placeholder="Tanggal Pengembalian" type="date" class="form-control datepicker" name="tanggal_dikembalikan">
-                                          </div>
-                                         </div>
-                                        </div>
-                                       </div>
-                                       <div class="form-group">
-                                        <br><label>Anggota</label>
-                                        <div class="col-md-6">
-                                            <select name="id_anggota" id="id_anggota" class="form-control">
-                                                <option value="">== Pilih Anggota ==</option>
-                                                @foreach ($anggota as $row)
-                                                    <option value="{{ $row->id }}">{{ $row->nama }}</option>
+                                <div class="container mt-5">
+                                    <form action="/pengembalian/list" method="post">
+                                        @csrf
+                                        @method("put")
+                                        <table class="table">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">Nama Inventaris</th>
+                                                <th scope="col">Keterangan</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($pinjaman as $a )
+                                              <tr>
+                                                {{-- <th scope="row">{{$loop->iteration}}</th> --}}
+                                                <td>{{$a->nama}}</td>
+                                                {{-- <td>{{$a->denda}}</td> --}}
+                                                <td>
+                                                    <select name="keterangan" id="keterangan">
+                                                      <option value="Null">Kondisi</option>
+                                                      <option value="Baik">Baik</option>
+                                                      <option value="Rusak">Rusak</option>
+                                                      <option value="Hilang">Hilang</option>
+                                                    </select>
+                                                </td>
                                                 @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                       <div class="mb3">
-                                           <br><button type="submit" class="btn btn-success">Kirim</button>
-                                       </div>
-                                </form>
+                                                <div class="mb3">
+                                                    <button type="submit" class="btn btn-success">Kembalikan</button>
+                                                </div>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </form>
 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,6 +223,7 @@
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
+
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
@@ -252,13 +250,10 @@
     <script src="{{ asset('../js/sidebarmenu.js')}}"></script>
     <script src="{{ asset('../js/custom.min.js')}}"></script>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-<script type="text/javascript">
-    $(function() {
-       $('#datetimepicker').datepicker();
-    });
-</script>
 
 </body>
 

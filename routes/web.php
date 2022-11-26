@@ -69,9 +69,14 @@ Route::middleware("auth")->group(function () {
     route::post('/staff/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store1'])->name('/staff/detail_peminjaman_sewa/create_p');
 
 
-    //pengembalian
-    Route::get('/pengembalian/list', [PengembalianController::class, 'index']);
-    Route::get('/pengembalian', [PengembalianController::class, 'process']);
+    //pengembalian bag admin
+    Route::get('/admin/pengembalian/list', [PengembalianController::class, 'index']);
+    Route::get('/admin/pengembalian', [PengembalianController::class, 'process']);
+
+
+    //pengembalian bag staff
+    Route::get('/staff/pengembalian/list', [PengembalianController::class, 'index1']);
+    Route::get('/staff/pengembalian', [PengembalianController::class, 'process1']);
 
 
     //user
