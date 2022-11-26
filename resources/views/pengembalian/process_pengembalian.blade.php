@@ -165,60 +165,39 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
+                                    <form action="/pengembalian/list" method="post">
+                                        @csrf
+                                        @method("put")
+                                        <table class="table">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">Nama Inventaris</th>
+                                                <th scope="col">Keterangan</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($pinjaman as $a )
+                                              <tr>
+                                                {{-- <th scope="row">{{$loop->iteration}}</th> --}}
+                                                <td>{{$a->nama}}</td>
+                                                {{-- <td>{{$a->denda}}</td> --}}
+                                                <td>
+                                                    <select name="keterangan" id="keterangan">
+                                                      <option value="Null">Kondisi</option>
+                                                      <option value="Baik">Baik</option>
+                                                      <option value="Rusak">Rusak</option>
+                                                      <option value="Hilang">Hilang</option>
+                                                    </select>
+                                                </td>
+                                                @endforeach
+                                                <div class="mb3">
+                                                    <button type="submit" class="btn btn-success">Kembalikan</button>
+                                                </div>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </form>
 
-                                    <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Nama Inventaris</th>
-                                            <th scope="col">Denda</th>
-                                            <th scope="col">Keterangan</th>
-
-
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($pinjaman as $a )
-                                          <tr>
-                                            <th scope="row">{{$loop->iteration}}</th>
-                                            <td>{{$a->nama}}</td>
-                                            <td>{{$a->denda}}</td>
-                                            <td>
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Kondisi</button>
-                                                <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Kondisi Barang</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <form action="/pengembalian" method="post">
-                                                                    @csrf
-                                                                    <label for="kondisi" class="form-label">Kondisi Inventaris</label>
-                                                                    <select name="keterangan" id="keterangan">
-                                                                      <option value="baik">Baik</option>
-                                                                      <option value="rusak">Rusak</option>
-                                                                      <option value="hilang">Hilang</option>
-                                                                    </select>
-                                                                </form>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-success">Kirim</button>
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                            </td>
-                                            @endforeach
-                                          </tr>
-                                        </tbody>
-                                      </table>
                                 </div>
                             </div>
                         </div>
