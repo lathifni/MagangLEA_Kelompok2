@@ -96,8 +96,9 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item">
-                            <a class="nav-link waves-effect" style="color: white" href="#"><img src="../assets/images/users/1.jpg"
-                                    alt="user" class="profile-pic" /> Logout</a>
+                            {{-- <a class="nav-link waves-effect btn btn-error" style="color: white" href="#"><img src="../assets/images/users/1.jpg"
+                                    alt="user" class="profile-pic" /> </a> --}}
+                            <button class="btn btn-danger rounded"> Logout</button>
                         </li>
 
 

@@ -167,28 +167,38 @@
                                         @method('put')
                                         @csrf
                                         <div class="mb-3">
-                                            <label for="Name" class="form-label">Nama User</label>
-                                            <input type="text" class="form-control" id="name" value="{{$user->name}}" name="name">
+                                            <label for="email" class="form-label">email:</label>
+                                            <input type="email" class="form-control" id="email"
+                                                value="{{ $user->email }}" name="email" readonly>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">email</label>
-                                            <input type="text" class="form-control" id="email" value="{{$anggota->no_hp}}" name="email">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="password"
+                                                value="{{ $user->password }}" name='password'>
+
                                         </div>
                                         <div class="mb-3">
-                                            <label for="Password" class="form-label">Email</label>
-                                            <input type="text" class="form-control" id="email" value="{{$anggota->email}}" name="email">
+                                            <label for="role" class="form-label">Role </label>
+                                            <input type="text" class="form-control" id="role"
+                                                value="{{ $user->role }}" name="role">
+
                                         </div>
                                         <div class="mb-3">
-                                            <label for="Harga" class="form-label">Jenis Kelamin</label>
-                                            <input type="text" class="form-control" value="{{$anggota->jenis_kelamin}}" readonly>
-                                            <select name="jenis_kelamin" id="jenis_kelamin">
-                                              <option value="laki-laki">Laki-Laki</option>
-                                              <option value="perempuan">Perempuan</option>
-                                            </select>
+                                            <label for="alamat" class="form-label">Alamat </label>
+                                            <input type="text" class="form-control" id="alamat"
+                                                value="{{ $user->alamat }}" name="alamat">
+
                                         </div>
                                         <div class="mb-3">
-                                            <label for="Nama" class="form-label">Alamat</label>
-                                            <input type="text" class="form-control" id="alamat" value="{{$anggota->alamat}}" name="alamat">
+                                            <label for="no_hp" class="form-label">no_hp</label>
+                                            <input type="number" class="form-control" id="no_hp"
+                                                value="{{ $user->no_hp }}" name="no_hp">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                                            <input type="text" class="form-control" id="jenis_kelamin"
+                                                value="{{ $user->jenis_kelamin }}" name="jenis_kelamin">
                                         </div>
                                           <div class="mb-3">
                                             <button type="submit" class="btn btn-success">Submit</button>
