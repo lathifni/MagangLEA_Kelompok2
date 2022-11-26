@@ -17,7 +17,7 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/inventaris/register', [AuthController::class, 'create']);
 
 Route::middleware("auth")->group(function () {
-});
+
 
     Route::get('/inventaris/create', [InventarisController::class, 'create']);
     Route::post('/inventaris', [InventarisController::class, 'store']);
@@ -84,3 +84,5 @@ Route::middleware("auth")->group(function () {
     Route::get('/user/{user}/delete', [AuthController::class, 'destroy']);
     Route::put('/user/{user}', [AuthController::class, 'update']);
     Route::get('/user/{user}/edit', [AuthController::class, 'edit']);
+
+});
