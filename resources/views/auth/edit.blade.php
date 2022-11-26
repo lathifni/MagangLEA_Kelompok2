@@ -121,7 +121,7 @@
                             class="mdi mdi-account-check"></i><span class="/user/list">Data User</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
                             class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
+                <li> <a class="waves-effect waves-dark" href="/peminjaman_sewa" aria-expanded="false"><i
                             class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
                             class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
@@ -179,17 +179,17 @@
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>
                                             <input type="password" class="form-control" id="password" value="{{$user->password}}" name='password'>
-                    
+
                                         </div>
                                         <div class="mb-3">
                                             <label for="alamat" class="form-label">Alamat </label>
                                             <input type="text" class="form-control" id="alamat" value="{{$user->alamat}}" name="alamat">
-                                            
+
                                         </div>
                                         <div class="mb-3">
                                           <label for="no_hp" class="form-label">no_hp</label>
                                           <input type="number" class="form-control" id="no_hp" value="{{$user->no_hp}}" name="no_hp">
-                                          
+
                                         </div>
                                         <div class="mb-3">
                                           <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>

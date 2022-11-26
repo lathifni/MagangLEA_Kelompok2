@@ -119,7 +119,7 @@
                                     class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/inventaris/data" aria-expanded="false"><i
                                     class="mdi mdi-account-check"></i><span class="hide-menu">Inventaris</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/peminjaman_sewa" aria-expanded="false"><i
                                     class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
                                     class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
