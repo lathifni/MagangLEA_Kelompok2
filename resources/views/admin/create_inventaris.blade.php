@@ -116,8 +116,8 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
+                            class="mdi mdi-gauge"></i><span class="/user/list">Dashboard</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
                             class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
                             class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
