@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>List Inventaris</title>
+    <title>Inventaris</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -165,7 +165,7 @@
                         <div class="card">
                             <div class="card-body">
                             <div class="container mt-5">
-       <a href="/admin/inventaris/create" target="blank">Tambah Inventaris</a>
+       <a href="/admin/inventaris/create" target="blank">Data Inventaris</a>
        <table class="table">
         <thead>
             <tr>

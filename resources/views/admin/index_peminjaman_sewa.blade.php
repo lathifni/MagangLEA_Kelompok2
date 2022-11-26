@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>List Inventaris</title>
+    <title>Pinjam-Sewa</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -121,7 +121,7 @@
                             class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
                             class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/peminjaman_sewa" aria-expanded="false"><i
+                <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
                             class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/admin/pengembalian/list" aria-expanded="false"><i
                             class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
@@ -151,7 +151,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Inventaris</h3>
+                        <h3 class="text">Data Pinjam-Sewa</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->

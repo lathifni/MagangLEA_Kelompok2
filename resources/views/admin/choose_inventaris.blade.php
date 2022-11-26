@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>List Inventaris</title>
+    <title>Pinjam-Sewa</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -151,7 +151,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Inventaris</h3>
+                        <h3 class="text">Pilih Inventaris</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -181,7 +181,7 @@
                                         </div>
                                     </div>
                                        <div class="mb3">
-                                           <br><a href="/index/peminjaman_sewa?id={{$id}}" class="btn btn-danger">Batal</a>
+                                           <br><a href="/admin/index/peminjaman_sewa?id={{$id}}" class="btn btn-danger">Batal</a>
                                             <button type="submit" class="btn btn-success">Kirim</button>
                                        </div>
                                 </form>

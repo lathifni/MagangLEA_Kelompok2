@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Anggota</title>
+    <title>Pinjam-Sewa</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -114,21 +114,20 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
-                            class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
-                            class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
-                            class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
-                            class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/anggota/list" aria-expanded="false"><i
-                            class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                            class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                <ul id="sidebarnav">
+                        <li> <a class="waves-effect waves-dark" href="/staff/staff" aria-expanded="false"><i
+                                    class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/inventaris/data" aria-expanded="false"><i
+                                    class="mdi mdi-account-check"></i><span class="hide-menu">Inventaris</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/staff/peminjaman_sewa" aria-expanded="false"><i
+                                    class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
+                                    class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/staff/anggota/list" aria-expanded="false"><i
+                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                                    class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                    </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -150,7 +149,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Tambah Data Anggota</h3>
+                        <h3 class="text">Data Pinjam-Sewa</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -163,38 +162,49 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="container mt-5">
-                                    <form action="/admin/anggota" method="post">
-                                        @csrf
-                                    <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label" id="nama">Nama Anggota</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama Anggota" name="nama">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="no_hp">Nomor HP</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan No.HP Anggota" name="no_hp">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="email">Email</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Email Anggota" name="email">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="formGroupExampleInput2" class="form-label" id="alamat">Alamat</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan Alamat Anggota" name="alamat">
-                                      </div>
-                                      <div class="mb-3">
-                                        <label for="status" class="form-label">Jenis Kelamin</label>
-                                        <select name="jenis_kelamin" id="jenis_kelamin">
-                                          <option value="laki-laki">Laki-Laki</option>
-                                          <option value="perempuan">Perempuan</option>
-                                        </select>
-                                    </div>
-                                      <div class="mb-3">
-                                        <button type="submit" class="btn btn-success">Submit</button>
-                                      </div>
+                            <div class="container mt-5">
+                                <h5 class="card-title">Form Tambah Data Pengajuan Peminjaman</h5>
+                                <div class="row">
+                                    <div class="col-lg-8 col-md ">Nama Anggota</div>
+                                    <div class="col-lg-4 col-md-8">Budi</div>
                                 </div>
-                                </form>
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-4 ">Tanggal Transaksi</div>
+                                    <div class="col-lg-4 col-md-8">Budi</div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-4 ">Tanggal Peminjaman</div>
+                                    <div class="col-lg-4 col-md-8">Budi</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-4 ">Tanggal Pengembalian</div>
+                                    <div class="col-lg-4 col-md-8">Budi</div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div>
+                                <a href="/staff/detail_peminjaman_sewa/create?id={{$id}}">Tambah Inventaris Ingin Dipinjam</a>
+                               <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>nama</th>
+                                        <th>Kategori</th>
+                                        <th>Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($listPinjaman as $l)
+                                    <tr>
+                                        <th>{{$loop->iteration}}</th>
+                                        <td>{{$l->nama}}</td>
+                                        <td>{{$l->kategori}}</td>
+                                        <td>{{$l->harga}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                               </table>
+
                             </div>
                         </div>
                     </div>
