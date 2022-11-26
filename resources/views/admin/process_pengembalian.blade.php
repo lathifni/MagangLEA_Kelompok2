@@ -167,9 +167,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/pengembalian/list" method="post">
+                                    <form action="/admin/pengembalian/list" method="post">
                                         @csrf
-                                        @method("put")
                                         <table class="table">
                                             <thead>
                                               <tr>

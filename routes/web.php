@@ -72,6 +72,7 @@ Route::post('/inventaris/register', [AuthController::class, 'create']);
     //pengembalian bag admin
     Route::get('/admin/pengembalian/list', [PengembalianController::class, 'index']);
     Route::get('/admin/pengembalian', [PengembalianController::class, 'process']);
+    Route::post('/admin/pengembalian/list', [PengembalianController::class, 'update']);
 
 
     //pengembalian bag staff

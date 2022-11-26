@@ -26,6 +26,19 @@ class PengembalianController extends Controller
                         return view('admin/process_pengembalian', compact('pinjaman'));
     }
 
+    public function update(Request $request){
+        $id = $request->query('id');
+
+        $validated = $request -> validate([
+           'id_inventaris' => 'required',
+        ]);
+        $validated["id_detail"] = $id;
+        $validated["denda"] = 0;
+        $validated["keterangan"] = "";
+        Detail_peminjaman_sewa::create($validated);
+        return redirect()->route('/admin/pengembalian/list', ['id' => $id]);
+     }
+
 
     //staff
 
