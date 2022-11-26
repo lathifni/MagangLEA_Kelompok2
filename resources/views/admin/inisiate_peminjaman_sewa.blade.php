@@ -96,8 +96,8 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item">
-                            <a class="nav-link waves-effect waves-dark" href="#"><img src="../assets/images/users/1.jpg"
-                                    alt="user" class="profile-pic" /></a>
+                            <a class="nav-link waves-effect" style="color: white" href="#"><img src="../assets/images/users/1.jpg"
+                                    alt="user" class="profile-pic" /> Logout</a>
                         </li>
                     </ul>
                 </div>
