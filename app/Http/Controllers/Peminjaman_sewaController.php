@@ -11,13 +11,13 @@ class Peminjaman_sewaController extends Controller
     public function inisiate (){
         $queryId  = DB::select("SHOW TABLE STATUS LIKE 'peminjaman_sewa'");
         $id = $queryId[0]->Auto_increment;
-        return redirect()->route('peminjaman_sewa/create_g', ['id' => $id]);
+        return redirect()->route('/admin/peminjaman_sewa/create_g', ['id' => $id]);
     }
 
     public function create (Request $request){
         $anggota = Anggota::all();
         $id = $request->query('id');
-        return view ('peminjaman_sewa/inisiate_peminjaman_sewa', ['anggota' => $anggota, 'id' => $id]);
+        return view ('admin/inisiate_peminjaman_sewa', ['anggota' => $anggota, 'id' => $id]);
     }
 
     public function storeCreate (Request $request) {
@@ -31,7 +31,7 @@ class Peminjaman_sewaController extends Controller
 	    $validated["tanggal_transaksi"] = date('Y-m-d');
         $validated["status_pinjam"] = 'sedang dipinjam';
         Peminjaman_sewa::create($validated);
-        return redirect()->route('index/peminjaman_sewa', ['id' => $id]);
+        return redirect()->route('/admin/index/peminjaman_sewa', ['id' => $id]);
     }
 
     public function index (Request $request){
@@ -41,6 +41,6 @@ class Peminjaman_sewaController extends Controller
                         ->where("detail_peminjaman_sewa.id_detail", $id)
                         ->get(['inventaris.*']);
 
-        return view('peminjaman_sewa.index_peminjaman_sewa', compact('listPinjaman'), ['id' => $id]);
+        return view('admin/index_peminjaman_sewa', compact('listPinjaman'), ['id' => $id]);
     }
 }

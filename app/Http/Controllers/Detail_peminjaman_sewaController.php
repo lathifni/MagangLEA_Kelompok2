@@ -10,7 +10,7 @@ class Detail_peminjaman_sewaController extends Controller
       $inventaris = Inventaris::all();
       $id = $request->query('id');
 
-      return view('detail_peminjaman_sewa/choose_inventaris', ['inventaris' => $inventaris, 'id' => $id]);
+      return view('admin/choose_inventaris', ['inventaris' => $inventaris, 'id' => $id]);
    }
 
    public function store(Request $request){
@@ -23,6 +23,6 @@ class Detail_peminjaman_sewaController extends Controller
       $validated["denda"] = 0;
       $validated["keterangan"] = "NULL";
       Detail_peminjaman_sewa::create($validated);
-      return redirect()->route('index/peminjaman_sewa', ['id' => $id]);
+      return redirect()->route('/admin/index/peminjaman_sewa', ['id' => $id]);
    }
 }

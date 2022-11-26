@@ -116,19 +116,19 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
-                                    class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
-                                    class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
-                                    class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/peminjaman_sewa" aria-expanded="false"><i
-                                    class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
-                                    class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                                    class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
+                            class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
+                            class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
+                            class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
+                            class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
+                            class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                            class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -165,47 +165,46 @@
                         <div class="card">
                             <div class="card-body">
                             <div class="container mt-5">
-                                <h5 class="card-title">Form Tambah Data Pengajuan Peminjaman</h5>
-                                <div class="row">
-                                    <div class="col-lg-8 col-md ">Nama Anggota</div>
-                                    <div class="col-lg-4 col-md-8">Budi</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8 col-md-4 ">Tanggal Transaksi</div>
-                                    <div class="col-lg-4 col-md-8">Budi</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8 col-md-4 ">Tanggal Peminjaman</div>
-                                    <div class="col-lg-4 col-md-8">Budi</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8 col-md-4 ">Tanggal Pengembalian</div>
-                                    <div class="col-lg-4 col-md-8">Budi</div>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div>
-                                <a href="/detail_peminjaman_sewa/create?id={{$id}}">Tambah Inventaris Ingin Dipinjam</a>
-                               <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>nama</th>
-                                        <th>Kategori</th>
-                                        <th>Harga</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($listPinjaman as $l)
-                                    <tr>
-                                        <th>{{$loop->iteration}}</th>
-                                        <td>{{$l->nama}}</td>
-                                        <td>{{$l->kategori}}</td>
-                                        <td>{{$l->harga}}</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                               </table>
+                                <h5 class="card-title">Form Awal Peminjaman</h5>
+                                <form action="/admin/peminjaman_sewa/create?id={{$id}}" method="post">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                         <div class="form-group">
+                                          <br><label>Tanggal Peminjaman</label>
+                                          <div class="input-group date">
+                                           <div class="input-group-addon">
+                                                  <span class="glyphicon glyphicon-th"></span>
+                                              </div>
+                                              <input placeholder="Tanggal Peminjaman" type="date" class="form-control datepicker" name="tanggal_transaksi_pengembalian" value="">
+                                          </div>
+                                         </div>
+                                         <div class="form-group">
+                                          <br><label>Tanggal Pengembalian</label>
+                                          <div class="input-group date">
+                                           <div class="input-group-addon">
+                                                  <span class="glyphicon glyphicon-th"></span>
+                                              </div>
+                                              <input placeholder="Tanggal Pengembalian" type="date" class="form-control datepicker" name="tanggal_dikembalikan">
+                                          </div>
+                                         </div>
+                                        </div>
+                                       </div>
+                                       <div class="form-group">
+                                        <br><label>Anggota</label>
+                                        <div class="col-md-6">
+                                            <select name="id_anggota" id="id_anggota" class="form-control">
+                                                <option value="">== Pilih Anggota ==</option>
+                                                @foreach ($anggota as $row)
+                                                    <option value="{{ $row->id }}">{{ $row->nama }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                       <div class="mb3">
+                                           <br><button type="submit" class="btn btn-success">Kirim</button>
+                                       </div>
+                                </form>
 
                             </div>
                         </div>
@@ -254,6 +253,14 @@
     <script src="{{ asset('../js/waves.js')}}"></script>
     <script src="{{ asset('../js/sidebarmenu.js')}}"></script>
     <script src="{{ asset('../js/custom.min.js')}}"></script>
+
+
+
+<script type="text/javascript">
+    $(function() {
+       $('#datetimepicker').datepicker();
+    });
+</script>
 
 </body>
 

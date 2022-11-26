@@ -84,14 +84,14 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item hidden-xs-down search-box"> <a
+                        {{-- <li class="nav-item hidden-xs-down search-box"> <a
                                 class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
                                     class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a
                                     class="srh-btn"><i class="ti-close"></i></a>
                             </form>
-                        </li>
+                        </li> --}}
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
@@ -121,7 +121,7 @@
                             class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
                             class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/peminjaman_sewa" aria-expanded="false"><i
+                <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
                             class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
                             class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
