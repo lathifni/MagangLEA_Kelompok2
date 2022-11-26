@@ -176,7 +176,7 @@
                                            <div class="input-group-addon">
                                                   <span class="glyphicon glyphicon-th"></span>
                                               </div>
-                                              <input placeholder="Tanggal Peminjaman" type="text" class="form-control datepicker" name="tanggal_transaksi_pengembalian" value="">
+                                              <input placeholder="Tanggal Peminjaman" type="date" class="form-control datepicker" name="tanggal_transaksi_pengembalian" value="">
                                           </div>
                                          </div>
                                          <div class="form-group">
@@ -185,7 +185,7 @@
                                            <div class="input-group-addon">
                                                   <span class="glyphicon glyphicon-th"></span>
                                               </div>
-                                              <input placeholder="Tanggal Pengembalian" type="text" class="form-control datepicker" name="tanggal_dikembalikan">
+                                              <input placeholder="Tanggal Pengembalian" type="date" class="form-control datepicker" name="tanggal_dikembalikan">
                                           </div>
                                          </div>
                                         </div>
