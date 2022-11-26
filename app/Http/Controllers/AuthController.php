@@ -123,6 +123,7 @@ class AuthController extends Controller
         ]);
         $user->update($validated);
         return redirect('/user/list');
+        $id=[];
     }
 
 }
