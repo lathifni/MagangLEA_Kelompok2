@@ -90,5 +90,36 @@ class AuthController extends Controller
         ];
         User::create($data);
         return redirect('/login');
+
+        
     }
+    public function store()
+    {
+            $user = User::all();
+            return view('auth.index', compact('user'));
+    }
+
+    public function destroy(User $user){
+        $user->delete();
+        return redirect()->back();
+    }
+
+    public function edit(User $user)
+    {
+        $user = User::all();
+        return view('auth.index', compact('user'));
+    }
+
+    public function update(Request $request, User $user){
+        $validated = $request->validate([
+            'nama'=> 'required || max:50',
+            'no_hp'=> 'required',
+            'email'=> 'required',
+            'jenis_kelamin'=> 'required',
+            'alamat'=> 'required',
+        ]);
+        $user->update($validated);
+        return redirect('/user/list');
+    }
+
 }
