@@ -121,9 +121,9 @@
                                     class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
                                     class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/peminjaman_sewa" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
                                     class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="/pengembalian/list" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/admin/pengembalian/list" aria-expanded="false"><i
                                     class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
                                     class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
