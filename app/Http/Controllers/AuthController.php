@@ -112,11 +112,14 @@ class AuthController extends Controller
 
     public function update(Request $request, User $user){
         $validated = $request->validate([
-            'nama'=> 'required || max:50',
-            'no_hp'=> 'required',
+            'name'=> 'required',
             'email'=> 'required',
-            'jenis_kelamin'=> 'required',
+            'password'=>'required',
+            'role'=> 'required',
             'alamat'=> 'required',
+            'no_hp'=> 'required',
+            'jenis_kelamin'=> 'required',
+            
         ]);
         $user->update($validated);
         return redirect('/user/list');

@@ -182,6 +182,11 @@
                     
                                         </div>
                                         <div class="mb-3">
+                                            <label for="alamat" class="form-label">Role </label>
+                                            <input type="text" class="form-control" id="role" value="{{$user->alamat}}" name="alamat">
+                                            
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="alamat" class="form-label">Alamat </label>
                                             <input type="text" class="form-control" id="alamat" value="{{$user->alamat}}" name="alamat">
                                             
