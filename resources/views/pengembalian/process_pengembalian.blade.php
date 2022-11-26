@@ -171,18 +171,16 @@
                                         <table class="table">
                                             <thead>
                                               <tr>
-                                                <th scope="col">No</th>
                                                 <th scope="col">Nama Inventaris</th>
-                                                <th scope="col">Denda</th>
                                                 <th scope="col">Keterangan</th>
                                               </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($pinjaman as $a )
                                               <tr>
-                                                <th scope="row">{{$loop->iteration}}</th>
+                                                {{-- <th scope="row">{{$loop->iteration}}</th> --}}
                                                 <td>{{$a->nama}}</td>
-                                                <td>{{$a->denda}}</td>
+                                                {{-- <td>{{$a->denda}}</td> --}}
                                                 <td>
                                                     <select name="keterangan" id="keterangan">
                                                       <option value="Null">Kondisi</option>
