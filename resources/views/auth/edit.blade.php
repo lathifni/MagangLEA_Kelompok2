@@ -174,7 +174,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="email" class="form-label">email:</label>
-                                            <input type="email" class="form-control" id="name" value="{{$user->nama}}" name="name" readonly>
+                                            <input type="email" class="form-control" id="email" value="{{$user->nama}}" name="name" readonly>
                                         </div>
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>

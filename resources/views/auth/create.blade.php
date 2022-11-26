@@ -67,8 +67,11 @@
                             </div>
                             <div>
                                 <label for="jenis_kelamin" class="form-labe" id="jenis_kelamin">Jenis Kelamin :</label>
-                                <input type="text" class="form-control rounded-left" placeholder="jenis kelamin"
-                                     name="jenis_kelamin"/>
+                                <select name="jenis_kelamin" class="form-control rounded-left" id="jenis_kelamin">
+                                    <option value="admin">Laki-laki</option>
+                                    <option value="staff">{erempuan</option>
+                                  </select>
+                                     
                             </div>
                             <div class="form-group d-md-flex">
                                 <!-- <div class="w-50">
