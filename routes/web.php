@@ -16,7 +16,7 @@ Route::post('/inventaris/login', [AuthController::class, 'authenticate']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/inventaris/register', [AuthController::class, 'create']);
 
-Route::middleware("auth")->group(function () {
+//Route::middleware("auth")->group(function () {
 
 
     Route::get('/inventaris/create', [InventarisController::class, 'create']);
@@ -85,4 +85,4 @@ Route::middleware("auth")->group(function () {
     Route::put('/user/{user}', [AuthController::class, 'update']);
     Route::get('/user/{user}/edit', [AuthController::class, 'edit']);
 
-});
+//});
