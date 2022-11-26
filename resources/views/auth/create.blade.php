@@ -62,7 +62,7 @@
                             </div>
                             <div>
                                 <label for="no_hp" class="form-labe" id="no_hp">No. HP :</label>
-                                <input type="text" class="form-control rounded-left" placeholder="no.hp"
+                                <input type="number" class="form-control rounded-left" placeholder="no.hp"
                                      name="no_hp"/>
                             </div>
                             <div>

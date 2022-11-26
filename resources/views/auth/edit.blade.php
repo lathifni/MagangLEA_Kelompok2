@@ -117,7 +117,7 @@
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
                             class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
+                <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
                             class="mdi mdi-account-check"></i><span class="/user/list">Data User</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
                             class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
@@ -151,7 +151,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Edit Inventaris</h3>
+                        <h3 class="text">Edit </h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -165,40 +165,35 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/inventaris/{{$inventaris->id}}" method="post">
+                                    <form action="/user/{{$user->id}}" method="post">
                                         @csrf
                                         @method("put")
                                         <div class="mb-3">
-                                            <label for="Nama" class="form-label">Nama Inventaris</label>
-                                            <input type="text" class="form-control" id="nama" value="{{$inventaris->nama}}" name="nama">
+                                            <label for="Name" class="form-label">Nama :</label>
+                                            <input type="text" class="form-control" id="name" value="{{$user->nama}}" name="name">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="Harga" class="form-label">Kategori Inventaris</label>
-                                            <input type="text" class="form-control" value="{{$inventaris->kategori}}" readonly>
-                                            <select name="kategori" id="kategori">
-                                              <option value="habis pakai">Habis pakai</option>
-                                              <option value="tidak habis pakai">Tidak habis pakai</option>
-                                            </select>
+                                            <label for="email" class="form-label">email:</label>
+                                            <input type="email" class="form-control" id="name" value="{{$user->nama}}" name="name" readonly>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="status" class="form-label">Status Inventaris</label>
-                                            <input type="text" class="form-control" value="{{$inventaris->status}}" readonly>
-                                            <select name="status" id="status">
-                                              <option value="sewa">Hanya dapat disewakan</option>
-                                              <option value="pinjam">Dapat dipinjamkan</option>
-                                            </select>
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="password" value="{{$user->password}}" name='password'>
+                    
                                         </div>
                                         <div class="mb-3">
-                                          <label for="kesediaan" class="form-label">Kesediaan Inventaris</label>
-                                          <input type="text" class="form-control" value="{{$inventaris->tersedia}}" readonly>
-                                          <select name="tersedia" id="tersedia">
-                                            <option value="ya">ya</option>
-                                            <option value="tidak">tidak</option>
-                                          </select>
+                                            <label for="alamat" class="form-label">Alamat </label>
+                                            <input type="text" class="form-control" id="alamat" value="{{$user->alamat}}" name="alamat">
+                                            
                                         </div>
                                         <div class="mb-3">
-                                          <label for="Nama" class="form-label">Harga Sewa Inventaris</label>
-                                          <input type="int" class="form-control" id="harga" value="{{$inventaris->harga}}" name="harga">
+                                          <label for="no_hp" class="form-label">no_hp</label>
+                                          <input type="number" class="form-control" id="no_hp" value="{{$user->no_hp}}" name="no_hp">
+                                          
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                                          <input type="text" class="form-control" id="jenis_kelamin" value="{{$user->harga}}" name="jenis_kelamin">
                                         </div>
                                         <div class="mb3">
                                             <button type="submit" class="btn btn-success">Kirim</button>

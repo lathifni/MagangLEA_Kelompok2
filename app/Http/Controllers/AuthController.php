@@ -107,7 +107,7 @@ class AuthController extends Controller
     public function edit(User $user)
     {
         $user = User::all();
-        return view('auth.index', compact('user'));
+        return view('auth.edit', compact('user'));
     }
 
     public function update(Request $request, User $user){
