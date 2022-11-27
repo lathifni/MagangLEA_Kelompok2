@@ -163,48 +163,57 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/user/{{$user->id}}" method="post">
+                                    @foreach ($user as $u )
+                                        
+                                    
+                                    <form action="/user/{{$u->id}}" method="post">
                                         @method('put')
                                         @csrf
                                         <div class="mb-3">
+                                            <label for="name" class="form-label">email:</label>
+                                            <input type="text" class="form-control" id="name"
+                                                value="{{ $u->name }}" name="name" >
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="email" class="form-label">email:</label>
                                             <input type="email" class="form-control" id="email"
-                                                value="{{ $user->email }}" name="email" readonly>
+                                                value="{{ $u->email }}" name="email" readonly>
                                         </div>
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>
                                             <input type="password" class="form-control" id="password"
-                                                value="{{ $user->password }}" name='password'>
+                                                value="{{ $u->password }}" name='password'>
 
                                         </div>
                                         <div class="mb-3">
                                             <label for="role" class="form-label">Role </label>
                                             <input type="text" class="form-control" id="role"
-                                                value="{{ $user->role }}" name="role">
+                                                value="{{ $u->role }}" name="role">
 
                                         </div>
                                         <div class="mb-3">
                                             <label for="alamat" class="form-label">Alamat </label>
                                             <input type="text" class="form-control" id="alamat"
-                                                value="{{ $user->alamat }}" name="alamat">
+                                                value="{{ $u->alamat }}" name="alamat">
 
                                         </div>
                                         <div class="mb-3">
                                             <label for="no_hp" class="form-label">no_hp</label>
                                             <input type="number" class="form-control" id="no_hp"
-                                                value="{{ $user->no_hp }}" name="no_hp">
+                                                value="{{ $u->no_hp }}" name="no_hp">
 
                                         </div>
                                         <div class="mb-3">
                                             <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                                             <input type="text" class="form-control" id="jenis_kelamin"
-                                                value="{{ $user->jenis_kelamin }}" name="jenis_kelamin">
+                                                value="{{ $u->jenis_kelamin }}" name="jenis_kelamin">
                                         </div>
                                           <div class="mb-3">
                                             <button type="submit" class="btn btn-success">Submit</button>
                                           </div>
                                 </div>
                                 </form>
+                                @endforeach
                                 </div>
                             </div>
                         </div>
