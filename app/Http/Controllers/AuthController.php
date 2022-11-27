@@ -31,7 +31,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/inventaris/create');
+            return redirect()->intended('/admin/admin');
         }else{
 
         return redirect('login')->withErrors('email user dan password yang anda masukkan salah');
@@ -56,12 +56,15 @@ class AuthController extends Controller
         // }
         //----------------------------------------------------------------------   
     }
-    // public function logout(Request $request)
-    // {
-    //     Auth::logout();
-    //     return view('auth.login');
+    public function logout(Request $request)
+    {
+        Auth::logout();
+    $request->session()->invalidate();
+ 
+    $request->session()->regenerateToken();
+        return redirect('/login');
 
-    // } 
+    } 
 
     public function register()
     {
@@ -124,6 +127,12 @@ class AuthController extends Controller
         $user->update($validated);
         return redirect('/user/list');
         $id=[];
+    }
+
+    public function profile()
+    {
+        $user = User::all();
+        return view('auth.profile', compact('user'));
     }
 
 }

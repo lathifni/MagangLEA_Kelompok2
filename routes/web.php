@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AuthController::class, 'login'])->name("login");
 Route::post('/inventaris/login', [AuthController::class, 'authenticate']);
-// Route::logout('/logout', [AuthController::class], 'logout');
+Route::post('/logout', [AuthController::class], 'logout');
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/inventaris/register', [AuthController::class, 'create']);
 
@@ -85,5 +85,6 @@ Route::post('/inventaris/register', [AuthController::class, 'create']);
     Route::get('/user/{user}/delete', [AuthController::class, 'destroy']);
     Route::put('/user/{user}', [AuthController::class, 'update']);
     Route::get('/user/{user}/edit', [AuthController::class, 'edit']);
+    Route::get('/profile', [AuthController::class, 'profile']);
 
 //});

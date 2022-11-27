@@ -11,7 +11,7 @@
     <meta name="description"
         content="Admin-Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Dashboard Admin</title>
+    <title>User | List Data</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminpro-lite/" />
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
@@ -19,8 +19,8 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../css/style.css" rel="stylesheet">
-    <link href={{asset("../css/style.css")}} rel="stylesheet">
-    <link href={{asset("../css/bootstrap.min.css")}} rel="stylesheet">
+    <link href={{ asset('../css/style.css') }} rel="stylesheet">
+    <link href={{ asset('../css/bootstrap.min.css') }} rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <!-- <link href="css/colors/default-dark.css" id="theme" rel="stylesheet"> -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -96,12 +96,9 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item">
-                            {{-- <a class="nav-link waves-effect btn btn-error" style="color: white" href="#"><img src="../assets/images/users/1.jpg"
-                                    alt="user" class="profile-pic" /> </a> --}}
-                            <a action="/logout" method="post" href="/login"><button class="btn btn-danger rounded"> Logout</button></a>
+                            <a class="nav-link waves-effect waves-dark" href="#"><img
+                                    src="../assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
                         </li>
-
-
                     </ul>
                 </div>
             </nav>
@@ -129,7 +126,8 @@
                         <li> <a class="waves-effect waves-dark" href="/admin/pengembalian/list" aria-expanded="false"><i
                                     class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
+                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data
+                                    Anggota</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/profile" aria-expanded="false"><i
                                     class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
@@ -154,7 +152,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text">Dashboard</h3>
+                        <h3 class="text">User</h3>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -163,16 +161,66 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h6>Selamat Datang di Admin Dashboard</h6>
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <div class="row">
+                            </div>@foreach ($user as $u)
+                          <div class="col-sm-3">
+                            <label class="mb-0">Full Name</label>
+                          
+                        
+                        
+                          <div action="{{$u->id}}" class="col-sm-9 text-secondary" name="name" id="name"value="{{$u->name}}">
 
-                            </div>
+                            
+                          </div>
                         </div>
+                        <hr>
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <h6 class="mb-0">Email</h6>
+                          </div>
+                          <div class="col-sm-9 text-secondary">
+                            fip@jukmuh.al
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <h6 class="mb-0">Phone</h6>
+                          </div>
+                          <div class="col-sm-9 text-secondary">
+                            (239) 816-9029
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <h6 class="mb-0">Mobile</h6>
+                          </div>
+                          <div class="col-sm-9 text-secondary">
+                            (320) 380-4539
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <h6 class="mb-0">Address</h6>
+                          </div>
+                          <div class="col-sm-9 text-secondary">
+                            Bay Area, San Francisco, CA
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                          </div>
+                          @endforeach
+                        </div>
+                      </div>
                     </div>
-                </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -210,12 +258,12 @@
     <!--Custom JavaScript -->
     <script src="../js/custom.min.js"></script>
 
-    <script src="{{ asset('../assets/plugins/jquery/jquery.min.js')}}"></script>
-    <script src="{{ asset('../assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('../js/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{ asset('../js/waves.js')}}"></script>
-    <script src="{{ asset('../js/sidebarmenu.js')}}"></script>
-    <script src="{{ asset('../js/custom.min.js')}}"></script>
+    <script src="{{ asset('../assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('../js/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('../js/waves.js') }}"></script>
+    <script src="{{ asset('../js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('../js/custom.min.js') }}"></script>
 
 </body>
 

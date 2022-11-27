@@ -127,7 +127,7 @@
                                     class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
                                     class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/profile" aria-expanded="false"><i
                                     class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
                 </nav>
