@@ -181,7 +181,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="password"
+                                            <input type="text" class="form-control" id="password"
                                                 value="{{ $u->password }}" name='password'>
 
                                         </div>
