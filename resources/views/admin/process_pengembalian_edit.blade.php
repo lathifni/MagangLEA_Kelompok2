@@ -167,13 +167,12 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                    <form action="/admin/pengembalian/list" method="post">
+                                    <form action="/admin/pengembalian/edit_status?id={{$id}}&idp={{$idp}}" method="post">
                                         @csrf
                                         <table class="table">
                                             <thead>
                                               <tr>
                                                 <th scope="col">Nama Inventaris</th>
-                                                <th scope="col">Keterangan</th>
                                                 <th scope="col">Edit Keterangan</th>
                                               </tr>
                                             </thead>
@@ -182,14 +181,18 @@
                                               <tr>
                                                 {{-- <th scope="row">{{$loop->iteration}}</th> --}}
                                                 <td>{{$a->nama}}</td>
-                                                <td>{{$a->keterangan}}</td>
                                                 {{-- <td>{{$a->denda}}</td> --}}
                                                 <td>
-                                                    <a href="/admin/pengembalian/edit?id={{$id}}&idp={{$a->id}}" class="btn btn-primary">Edit</a>
+                                                    <select name="keterangan" id="keterangan">
+                                                        <option value="Null">Kosong</option>
+                                                        <option value="Baik">Baik</option>
+                                                        <option value="Rusak">Rusak</option>
+                                                        <option value="Hilang">Hilang</option>
+                                                      </select>
                                                 </td>
                                                 @endforeach
                                                 <div class="mb3">
-                                                    <button type="submit" class="btn btn-success">Kembalikan</button>
+                                                    <button type="submit" class="btn btn-success">Simpan</button>
                                                 </div>
                                               </tr>
                                             </tbody>
