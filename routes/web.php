@@ -16,7 +16,7 @@ Route::post('/logout', [AuthController::class], 'logout');
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/inventaris/register', [AuthController::class, 'create']);
 
-//Route::middleware("auth")->group(function () {
+Route::middleware("auth")->group(function () {
 
 
     Route::get('/inventaris/create', [InventarisController::class, 'create']);
@@ -44,18 +44,7 @@ Route::post('/inventaris/register', [AuthController::class, 'create']);
     Route::get('/admin/admin', [AdminController::class, 'create']);
     Route::get('/staff/staff', [StaffController::class, 'create']);
 
-    //admin pinjamsewa
-    Route::get('/admin/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate']);
-    Route::get('/admin/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('/admin/peminjaman_sewa/create_g');
-    Route::post('/admin/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'storeCreate'])->name('/admin/peminjaman_sewa/create_p');
-    Route::get('/admin/index/peminjaman_sewa', [Peminjaman_sewaController::class, 'index'])->name('/admin/index/peminjaman_sewa');
-
-    route::get('/admin/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'create'])->name('/admin/detail_peminjaman_sewa/create_g');
-    route::post('/admin/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('/admin/detail_peminjaman_sewa/create_p');
-
-    route::get('/admin/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'create'])->name('/admin/detail_peminjaman_sewa/create_g');
-    route::post('/admin/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('/admin/detail_peminjaman_sewa/create_p');
-
+   
     //Route staff peminjaman sewa
     Route::get('/staff/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate1']);
     Route::get('/staff/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create1'])->name('/staff/peminjaman_sewa/create_g');
@@ -89,4 +78,15 @@ Route::post('/inventaris/register', [AuthController::class, 'create']);
     Route::get('/user/{user}/edit', [AuthController::class, 'edit']);
     Route::get('/profile', [AuthController::class, 'profile']);
 
-//});
+});
+ //admin pinjamsewa
+    Route::get('/admin/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate']);
+    Route::get('/admin/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create'])->name('/admin/peminjaman_sewa/create_g');
+    Route::post('/admin/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'storeCreate'])->name('/admin/peminjaman_sewa/create_p');
+    Route::get('/admin/index/peminjaman_sewa', [Peminjaman_sewaController::class, 'index'])->name('/admin/index/peminjaman_sewa');
+
+    route::get('/admin/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'create'])->name('/admin/detail_peminjaman_sewa/create_g');
+    route::post('/admin/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('/admin/detail_peminjaman_sewa/create_p');
+
+    route::get('/admin/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'create'])->name('/admin/detail_peminjaman_sewa/create_g');
+    route::post('/admin/detail_peminjaman_sewa/create', [Detail_peminjaman_sewaController::class, 'store'])->name('/admin/detail_peminjaman_sewa/create_p');

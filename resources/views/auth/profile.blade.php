@@ -163,64 +163,75 @@
                 <!-- ============================================================== -->
                 <div class="col-md-8">
                     <div class="card mb-3">
-                      <div class="card-body">
-                        <div class="row">
-                            </div>@foreach ($user as $u)
-                          <div class="col-sm-3">
-                            <label class="mb-0">Full Name</label>
-                          
-                        
-                        
-                          <div action="{{$u->id}}" class="col-sm-9 text-secondary" name="name" id="name"value="{{$u->name}}">
+                        <div class="card-body">
+                            <div class="row">
+                            </div>
+                            @foreach ($user as $u)
+                                <div class="col-sm-3">
+                                    <label class="mb-0">Full Name</label>
 
-                            
-                          </div>
+
+
+                                    <div action="{{ $u->id }}" class="col-sm-9 text-secondary" name="name"
+                                        id="name"value="{{ $u->name }}">
+
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Email</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">eole</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">alamat</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">no.HP</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Jenis Kelamin</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <a class="btn btn-info " target="__blank"
+                                            href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                    </div>
+                            @endforeach
                         </div>
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-3">
-                            <h6 class="mb-0">Email</h6>
-                          </div>
-                          <div class="col-sm-9 text-secondary">
-                            
-                          </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-3">
-                            <h6 class="mb-0">Phone</h6>
-                          </div>
-                          <div class="col-sm-9 text-secondary">
-                            (239) 816-9029
-                          </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-3">
-                            <h6 class="mb-0">Mobile</h6>
-                          </div>
-                          <div class="col-sm-9 text-secondary">
-                            (320) 380-4539
-                          </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-3">
-                            <h6 class="mb-0">Address</h6>
-                          </div>
-                          <div class="col-sm-9 text-secondary">
-                            Bay Area, San Francisco, CA
-                          </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-12">
-                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                          </div>
-                          @endforeach
-                        </div>
-                      </div>
                     </div>
+                </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
