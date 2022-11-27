@@ -181,7 +181,7 @@
                                                 {{-- <td>{{$a->denda}}</td> --}}
                                                 <td>
                                                     <select name="keterangan" id="keterangan">
-                                                      <option value="Null">Kondisi</option>
+                                                      <option value="Null">===Kondisi===</option>
                                                       <option value="Baik">Baik</option>
                                                       <option value="Rusak">Rusak</option>
                                                       <option value="Hilang">Hilang</option>

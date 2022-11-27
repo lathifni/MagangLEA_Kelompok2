@@ -44,7 +44,7 @@ Route::middleware("auth")->group(function () {
     Route::get('/admin/admin', [AdminController::class, 'create']);
     Route::get('/staff/staff', [StaffController::class, 'create']);
 
-   
+
     //Route staff peminjaman sewa
     Route::get('/staff/peminjaman_sewa', [Peminjaman_sewaController::class, 'inisiate1']);
     Route::get('/staff/peminjaman_sewa/create', [Peminjaman_sewaController::class, 'create1'])->name('/staff/peminjaman_sewa/create_g');
@@ -68,7 +68,10 @@ Route::middleware("auth")->group(function () {
 
     //pengembalian bag staff
     Route::get('/staff/pengembalian/list', [PengembalianController::class, 'index1']);
-    Route::get('/staff/pengembalian', [PengembalianController::class, 'process1']);
+    Route::get('/staff/pengembalian', [PengembalianController::class, 'process1'])->name('/staff/pengembalian');
+    Route::get('/staff/pengembalian/edit', [PengembalianController::class, 'process_edit1']);
+    Route::post('/staff/pengembalian/edit_status', [PengembalianController::class, 'update_detail1']);
+    Route::post('/staff/pengembalian/list', [PengembalianController::class, 'update1']);
 
 
     //user

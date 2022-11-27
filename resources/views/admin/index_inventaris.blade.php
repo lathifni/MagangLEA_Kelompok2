@@ -165,7 +165,7 @@
                         <div class="card">
                             <div class="card-body">
                             <div class="container mt-5">
-       <a href="/admin/inventaris/create" target="blank">Data Inventaris</a>
+       <a href="/inventaris/create" target="blank">Data Inventaris</a>
        <table class="table">
         <thead>
             <tr>
