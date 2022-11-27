@@ -23,7 +23,22 @@ class PengembalianController extends Controller
                     ->where("id_detail", $id)
                     ->get(['detail_peminjaman_sewa.*', 'inventaris.nama']);
 
-                        return view('admin/process_pengembalian', compact('pinjaman'));
+                        return view('admin/process_pengembalian', compact('pinjaman'), ['id' => $id]);
+    }
+
+    public function process_edit (Request $request){
+        $id = $request->query('id');
+        $idp = $request->query('idp');
+
+        $pinjaman = Detail_peminjaman_sewa::join("inventaris", "inventaris.id", "=", "detail_peminjaman_sewa.id_inventaris" )
+                    ->where("id_detail", $id)
+                    ->where('detail_peminjaman_sewa.id', $idp)
+                    ->get(['detail_peminjaman_sewa.*', 'inventaris.nama']);
+        // $pinjaman = DB::table('detail_peminjaman_sewa')
+        //             -> where('id', $id)
+        //             ->get();
+
+        return view('admin/process_pengembalian_edit', compact('pinjaman'), ['id' => $id, 'idp' => $idp]);
     }
 
     public function update(Request $request){
@@ -39,6 +54,17 @@ class PengembalianController extends Controller
         return redirect()->route('/admin/pengembalian/list', ['id' => $id]);
      }
 
+
+    public function update_detail (Request $request, Detail_peminjaman_sewa $detail_peminjaman_sewa){
+        $id = $request->query('id');
+        $idp = $request->query('idp');
+
+        $validated = $request->validate([
+            'keterangan'=> 'required',
+        ]);
+        $detail_peminjaman_sewa->update($validated);
+        return redirect()->route('/admin/pengembalian', ['id' => $id]);
+    }
 
     //staff
 
