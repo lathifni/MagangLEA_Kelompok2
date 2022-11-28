@@ -21,7 +21,7 @@
             <div class="card-body">
                 <div class="container mt-5">
                     
-                    <a href="/tambah" target="blank">Tambah User</a>
+                    <a href="/tambah" >Tambah User</a>
                     <table class="table">
                         <thead>
                             <tr>
