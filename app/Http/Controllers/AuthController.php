@@ -109,7 +109,7 @@ class AuthController extends Controller
 
     public function edit(User $user)
     {
-        $user = User::all();
+        
         return view('auth.edit', compact('user'));
     }
 
@@ -134,6 +134,26 @@ class AuthController extends Controller
     {
         $user = User::all();
         return view('auth.profile', compact('user'));
+    }
+
+    public function daftar()
+    {
+        return view('auth.add');
+    }
+    public function tambah(Request $request){
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role'=>$request->role,
+            'alamat'=>$request->alamat,
+            'no_hp'=>$request->no_hp,
+            'jenis_kelamin'=>$request->jenis_kelamin
+        ];
+        User::create($data);
+        return redirect()->back()->with("Akun Berhasi Ditambah kan  ");
+
     }
 
 }

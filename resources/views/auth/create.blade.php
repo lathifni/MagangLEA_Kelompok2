@@ -52,8 +52,9 @@
                                 <div>
                                     <label for="role" class="form-labe" id="role">Role :</label>
                                     <select name="role" class="form-control rounded-left" id="role">
-                                        <option value="admin">Admin</option>
-                                        <option value="staff">Staff</option>
+                                        <option value="staff">Staff</option> 
+                                        <option value="admin" disabled="true">Admin</option>
+                                        
                                     </select>
                                 </div>
                                 <div>
