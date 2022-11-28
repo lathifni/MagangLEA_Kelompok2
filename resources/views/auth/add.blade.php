@@ -1,5 +1,9 @@
 @extends('layout.app')
-
+@section("head")
+<div class="col-md-5 align-self-center">
+    <h3 class="text">Tambah User</h3>
+</div>  
+@endsection
 
 @section('content')
     <form action="/user/tambah" class="login-form" method="post">

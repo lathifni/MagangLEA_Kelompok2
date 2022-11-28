@@ -19,8 +19,8 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../css/style.css" rel="stylesheet">
-    <link href={{asset("../css/style.css")}} rel="stylesheet">
-    <link href={{asset("../css/bootstrap.min.css")}} rel="stylesheet">
+    <link href={{ asset('../css/style.css') }} rel="stylesheet">
+    <link href={{ asset('../css/bootstrap.min.css') }} rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <!-- <link href="css/colors/default-dark.css" id="theme" rel="stylesheet"> -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -96,8 +96,11 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item">
-                            <a class="nav-link waves-effect" style="color: white" href="#"><img src="../assets/images/users/1.jpg"
-                                    alt="user" class="profile-pic" /> Logout</a>
+                            <div>
+                                <form action="/logout" method="post">
+                                    <button type="submit" class="btn btn-danger rounded"> Logout</button>
+                                </form>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -116,19 +119,20 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="/admin/admin" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
-                            class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
-                            class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
-                            class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/admin/pengembalian/list" aria-expanded="false"><i
-                            class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
-                            class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                            class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
+                                    class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/user/list" aria-expanded="false"><i
+                                    class="mdi mdi-account-check"></i><span class="hide-menu">Data User</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/inventaris/list" aria-expanded="false"><i
+                                    class="mdi mdi-table"></i><span class="hide-menu">Inventaris</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/admin/peminjaman_sewa" aria-expanded="false"><i
+                                    class="mdi mdi-emoticon"></i><span class="hide-menu">Pinjam-Sewa</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/admin/pengembalian/list" aria-expanded="false"><i
+                                    class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
+                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data
+                                    Anggota</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="/profile" aria-expanded="false"><i
+                                    class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -150,9 +154,7 @@
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h3 class="text">Edit Data Anggota</h3>
-                    </div>
+                    @yield("head")
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
@@ -160,12 +162,13 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="container mt-5">
-                                 @yield("content")
+                                    @yield('content')
                                 </div>
                             </div>
                         </div>
@@ -208,12 +211,12 @@
     <!--Custom JavaScript -->
     <script src="../js/custom.min.js"></script>
 
-    <script src="{{ asset('../assets/plugins/jquery/jquery.min.js')}}"></script>
-    <script src="{{ asset('../assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('../js/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{ asset('../js/waves.js')}}"></script>
-    <script src="{{ asset('../js/sidebarmenu.js')}}"></script>
-    <script src="{{ asset('../js/custom.min.js')}}"></script>
+    <script src="{{ asset('../assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('../js/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('../js/waves.js') }}"></script>
+    <script src="{{ asset('../js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('../js/custom.min.js') }}"></script>
 
 </body>
 

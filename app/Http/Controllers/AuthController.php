@@ -132,14 +132,14 @@ class AuthController extends Controller
         $id=[];
     }
 
-    public function profile()
+    public function profile(User $user)
     {
-        return view('auth.profile', );
+        return view('auth.profile', compact('user'));
     }
 
-    public function data(Request $request, User $user)
+    public function data( Request $request, User $user)
     {
-        return view('auth.progile', compact('user'));
+        return view('auth.profile', compact('user'));
     }
 
     public function daftar()
