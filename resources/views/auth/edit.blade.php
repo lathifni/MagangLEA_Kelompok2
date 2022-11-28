@@ -54,7 +54,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/admin/admin  ">
                         <!-- Logo icon --><b>
                             <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                         </b>
@@ -182,7 +182,7 @@
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>
                                             <input type="text" class="form-control" id="password"
-                                                value="{{ $u->password }}" name='password'>
+                                                value="{{Hash::make( $u->password )}}" name='password'>
 
                                         </div>
                                         <div class="mb-3">

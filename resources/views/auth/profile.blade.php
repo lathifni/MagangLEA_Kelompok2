@@ -54,7 +54,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/admin/admin">
                         <!-- Logo icon --><b>
                             <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                         </b>
