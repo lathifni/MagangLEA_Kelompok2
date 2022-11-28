@@ -114,6 +114,7 @@ class AuthController extends Controller
     }
 
     public function update(Request $request, User $user){
+        
         $validated = $request->validate([
             'name'=> 'required',
             'email'=> 'required',
