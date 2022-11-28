@@ -59,10 +59,12 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-    $request->session()->invalidate();
+        
+        $request->session()->invalidate();
  
-    $request->session()->regenerateToken();
-        return redirect('/login');
+        $request->session()->regenerateToken();
+
+        return redirect('/inventaris/login');
 
     } 
 
@@ -132,8 +134,12 @@ class AuthController extends Controller
 
     public function profile()
     {
-        $user = User::all();
-        return view('auth.profile', compact('user'));
+        return view('auth.profile', );
+    }
+
+    public function data(Request $request, User $user)
+    {
+        return view('auth.progile', compact('user'));
     }
 
     public function daftar()

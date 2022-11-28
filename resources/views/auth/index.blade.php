@@ -19,8 +19,8 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../css/style.css" rel="stylesheet">
-    <link href={{asset("../css/style.css")}} rel="stylesheet">
-    <link href={{asset("../css/bootstrap.min.css")}} rel="stylesheet">
+    <link href={{ asset('../css/style.css') }} rel="stylesheet">
+    <link href={{ asset('../css/bootstrap.min.css') }} rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <!-- <link href="css/colors/default-dark.css" id="theme" rel="stylesheet"> -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -96,8 +96,17 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item">
-                            <a class="nav-link waves-effect waves-dark" href="#"><img src="../assets/images/users/1.jpg"
-                                    alt="user" class="profile-pic" /></a>
+                            {{-- <a class="nav-link waves-effect btn btn-error" style="color: white" href="#"><img src="../assets/images/users/1.jpg"
+                                    alt="user" class="profile-pic" /> </a> --}}
+                            <div>
+                                <form action="/logout" method="post">
+                                    <button type="submit" class="btn btn-danger rounded"> Logout</button>
+                                </form> 
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-dark" href="#"><img
+                                    src="../assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
                         </li>
                     </ul>
                 </div>
@@ -126,7 +135,8 @@
                         <li> <a class="waves-effect waves-dark" href="/admin/pengembalian/list" aria-expanded="false"><i
                                     class="mdi mdi-earth"></i><span class="hide-menu">Pengembalian</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/admin/anggota/list" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data Anggota</span></a></li>
+                                    class="mdi mdi-book-open-variant"></i><span class="hide-menu">Data
+                                    Anggota</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="/profile" aria-expanded="false"><i
                                     class="mdi mdi-help-circle"></i><span class="hide-menu">Profile</span></a></li>
                     </ul>
@@ -164,42 +174,44 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                            <div class="container mt-5">
-       <a href="/tambah" target="blank">Tambah User</a>
-       <table class="table">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>nama</th>
-                <th>email</th>
-                <th>alamat</th>
-                <th>role</th>
-                <th>no_hp</th>
-                <th>jenis_kelamin</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($user as $u)
-            <tr>
-                <th>{{$loop->iteration}}</th>
-                <td>{{$u->name }}</td>
-                <td>{{$u->email}}</td>
-                <td>{{$u->alamat}}</td>
-                <td>{{$u->role}}</td>
-                <td>{{$u->no_hp}}</td>
-                <td>{{$u->jenis_kelamin}}</td>
-                <td>
-                    <a href="/user/{{$u->id}}/edit" class="btn btn-warning">
-                      <i class="bi bi-pencil"></i>Edit</a>
-                    <a href="/user/{{$u->id}}/delete" class="btn btn-warning">
-                      <i class="bi bi-trash"></i>Hapus</a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-       </table>
-    </div>
+                                <div class="container mt-5">
+                                    <a href="/tambah" target="blank">Tambah User</a>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>nama</th>
+                                                <th>email</th>
+                                                <th>alamat</th>
+                                                <th>role</th>
+                                                <th>no_hp</th>
+                                                <th>jenis_kelamin</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($user as $u)
+                                                <tr>
+                                                    <th>{{ $loop->iteration }}</th>
+                                                    <td>{{ $u->name }}</td>
+                                                    <td>{{ $u->email }}</td>
+                                                    <td>{{ $u->alamat }}</td>
+                                                    <td>{{ $u->role }}</td>
+                                                    <td>{{ $u->no_hp }}</td>
+                                                    <td>{{ $u->jenis_kelamin }}</td>
+                                                    <td>
+                                                        <a href="/user/{{ $u->id }}/edit"
+                                                            class="btn btn-warning">
+                                                            <i class="bi bi-pencil"></i>Edit</a>
+                                                        <a href="/user/{{ $u->id }}/delete"
+                                                            class="btn btn-warning">
+                                                            <i class="bi bi-trash"></i>Hapus</a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
 
                             </div>
                         </div>
@@ -242,12 +254,12 @@
     <!--Custom JavaScript -->
     <script src="../js/custom.min.js"></script>
 
-    <script src="{{ asset('../assets/plugins/jquery/jquery.min.js')}}"></script>
-    <script src="{{ asset('../assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('../js/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{ asset('../js/waves.js')}}"></script>
-    <script src="{{ asset('../js/sidebarmenu.js')}}"></script>
-    <script src="{{ asset('../js/custom.min.js')}}"></script>
+    <script src="{{ asset('../assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('../js/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('../js/waves.js') }}"></script>
+    <script src="{{ asset('../js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('../js/custom.min.js') }}"></script>
 
 </body>
 

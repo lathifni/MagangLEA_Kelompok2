@@ -53,7 +53,7 @@
                                     <label for="role" class="form-labe" id="role">Role :</label>
                                     <select name="role" class="form-control rounded-left" id="role">
                                         <option value="staff">Staff</option> 
-                                        <option value="admin" disabled="true">Admin</option>
+                                        <option value="admin" disabled="true" style="color:lightslategray" >Admin ( tidak bisa dipilih )</option>
                                         
                                     </select>
                                 </div>

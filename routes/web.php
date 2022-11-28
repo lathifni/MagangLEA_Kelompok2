@@ -80,6 +80,7 @@ Route::middleware("auth")->group(function () {
     Route::put('/user/{user}', [AuthController::class, 'update']);
     Route::get('/user/{user}/edit', [AuthController::class, 'edit']);
     Route::get('/profile', [AuthController::class, 'profile']);
+    Route::put('/profile/{user}',[AuthController::class,'data']);
     Route::get('/tambah', [AuthController::class, 'daftar']);
     Route::post('/user/tambah', [AuthController::class, 'tambah']);
 

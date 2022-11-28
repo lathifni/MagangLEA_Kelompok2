@@ -166,14 +166,14 @@
                         <div class="card-body">
                             <div class="row">
                             </div>
-                            @foreach ($user as $u)
+                            <form action="/profile/{{$user->id}}">
                                 <div class="col-sm-3">
                                     <label class="mb-0">Full Name</label>
 
 
 
-                                    <div action="{{ $u->id }}" class="col-sm-9 text-secondary" name="name"
-                                        id="name"value="{{ $u->name }}">
+                                    <div class="col-sm-9 text-secondary" name="name"
+                                        id="name"value="{{ $user->name }}">
 
 
                                     </div>
@@ -224,11 +224,8 @@
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <a class="btn btn-info " target="__blank"
-                                            href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                                    </div>
-                            @endforeach
+
+                            </form>
                         </div>
                     </div>
                 </div>
