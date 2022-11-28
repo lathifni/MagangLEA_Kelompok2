@@ -1,6 +1,6 @@
 @extends("layout.app")
 
-@section()
+@section("head")
   <div class="col-md-5 align-self-center" style="border-block-start: ">
     <h3 class="text">Edit Data User</h3>
 </div>  

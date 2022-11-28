@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section("head")
 <div class="col-md-5 align-self-center">
-    <h3 class="text">Edit Data Anggota</h3>
+    <h3 class="text">Profile</h3>
 </div>
 @endsection
 
