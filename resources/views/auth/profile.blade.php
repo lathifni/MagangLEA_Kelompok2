@@ -7,7 +7,7 @@
 
 @section('content')
     <form action="/profile/{{ $user->id }}" method="post">
-        @method('put')
+     @method('put')
         @csrf
 
         <div class="container">
@@ -28,7 +28,7 @@
                                         <input type="text" id="name" value="{{$user->name}}" name="name">
                                         <h4 type="text" name="name" id="name" value="{{ $user->name }}"></h4>
                                         <p class="text-secondary mb-1" name="alamat" id="alamat"
-                                            value="{{ $user->alamat }}"></p>
+                                            value="{{ $user->alamat }}">{{ $user->alamat }}</p>
                                         <p class="text-muted font-size-sm"name="email" id=email
                                             value="{{ $user->email }}"></p>
                                     </div>
@@ -49,7 +49,7 @@
                                         <h6 class="mb-0">Full Name</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <p value="{{ $user->name }}"></p>
+                                        <p value="{{ $user->name }}">{{ $user->name }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -58,7 +58,7 @@
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <p value="{{ $user->email }}"></p>
+                                        <p value="{{ $user->email }}">Passasdasd</p>
                                     </div>
                                 </div>
                                 <hr>

@@ -83,6 +83,7 @@ Route::middleware("auth")->group(function () {
     Route::put('/profile/{user}',[AuthController::class,'data']);
     Route::get('/tambah', [AuthController::class, 'daftar']);
     Route::post('/user/tambah', [AuthController::class, 'tambah']);
+    Route::get('/ganti', [AuthController::class, 'ganti']);
 
 });
  //admin pinjamsewa
