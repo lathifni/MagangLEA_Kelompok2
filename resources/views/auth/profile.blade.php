@@ -1,13 +1,13 @@
 @extends('layout.app')
-@section("head")
-<div class="col-md-5 align-self-center">
-    <h3 class="text">Profile</h3>
-</div>
+@section('head')
+    <div class="col-md-5 align-self-center">
+        <h3 class="text">Profile</h3>
+    </div>
 @endsection
 
 @section('content')
     <form action="/profile/{{ $user->id }}" method="post">
-     @method('put')
+        @method('put')
         @csrf
 
         <div class="container">
@@ -23,23 +23,25 @@
                                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
                                         class="rounded-circle" width="150">
 
+                                    <div class="contaier">
+                                        <div class="mt-3">
 
-                                    <div class="mt-3">
-                                        <input type="text" id="name" value="{{$user->name}}" name="name">
-                                        <h4 type="text" name="name" id="name" value="{{ $user->name }}"></h4>
-                                        <p class="text-secondary mb-1" name="alamat" id="alamat"
-                                            value="{{ $user->alamat }}">{{ $user->alamat }}</p>
-                                        <p class="text-muted font-size-sm"name="email" id=email
-                                            value="{{ $user->email }}"></p>
+                                            <h4 type="text" name="name" id="name">
+                                                {{ old('name', Auth::user()->name) }}</h4>
+
+                                            <h4 type="text" name="role" id="role">
+                                                {{ old('role', Auth::user()->role) }}</h4>
+                                            <p class="text-secondary mb-1 text-center" name="alamat" id="alamat">
+                                                {{ old('alamat', Auth::user()->alamat) }}</p>
+
+                                            <p class="text-muted font-size-sm text-center "name="email" id=email>
+                                                {{ old('email', Auth::user()->email) }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card mt-3">
-                            <ul class="list-group list-group-flush">
 
-                            </ul>
-                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card mb-3">
@@ -49,7 +51,8 @@
                                         <h6 class="mb-0">Full Name</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <p value="{{ $user->name }}">{{ $user->name }}</p>
+                                        <p value="{{ old('name', Auth::user()->name) }}">
+                                            {{ old('name', Auth::user()->name) }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -58,7 +61,8 @@
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <p value="{{ $user->email }}">Passasdasd</p>
+                                        <p value="{{ old('email', Auth::user()->email) }}">
+                                            {{ old('email', Auth::user()->email) }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -67,43 +71,46 @@
                                         <h6 class="mb-0">Alamat</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <p value="{{ $user->alamat }}"></p>
+                                        <p value="{{ old('alamat', Auth::user()->alamat) }}">
+                                            {{ old('alamat', Auth::user()->alamat) }}</p>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">ROle</h6>
-                                    </div>
-                                    <div class="col-sm-ROle9 text-secondary">
-                                        <p value="{{ $user->role }}"> </p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">no_hp</h6>
+                                        <h6 class="mb-0">Role</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <p value=" {{ $user->no_hp }}"></p>
+                                        <p>
+                                            {{ old('role', Auth::user()->role) }}</p>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Jenis_kelamin</h6>
+                                        <h6 class="mb-0">no. Hp</h6>
                                     </div>
-                                    <div class="col-sm-ROle9 text-secondary">
-                                        <p value=" {{ $user->jenis_kelamin }}"></p>
+                                    <div class="col-sm-9 text-secondary">
+                                        <p value=" {{ old('no_hp', Auth::user()->no_hp) }}">
+                                            {{ old('no_hp', Auth::user()->no_hp) }}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Jenis Kelamin</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <p>
+                                            {{ old('jenis_kelamin', Auth::user()->jenis_kelamin) }}</p>
                                     </div>
                                 </div>
                                 <hr>
 
-                                <hr>
+
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <a class="btn btn-info " target="__blank"
-                                            href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                        <a class="btn btn-info " href="/user/{{ old('name', Auth::user()->id) }}/edit">Edit</a>
                                     </div>
                                 </div>
                             </div>

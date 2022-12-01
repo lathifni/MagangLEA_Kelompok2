@@ -26,7 +26,7 @@
         <label for="password" class="form-label">Password</label>
         <input type="text" class="form-control" id="password"
             value="{{Hash::make( $user->password )}}" name='password'>
-
+        <a href="/ganti" type="submit" class=" btn btn-primary">Change Password</a>
     </div>
     <div class="mb-3">
         <label for="role" class="form-label">Role </label>

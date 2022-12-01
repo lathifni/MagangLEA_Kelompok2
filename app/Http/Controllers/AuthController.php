@@ -45,7 +45,7 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('auth.login');
+        return redirect('/login');
     }
 
     public function register()
@@ -109,7 +109,7 @@ class AuthController extends Controller
         ]);
         $user->update($validated);
         return redirect('/user/list');
-        $id = [];
+      
     }
 
     public function profile(User $user)
@@ -142,7 +142,30 @@ class AuthController extends Controller
         return redirect()->back()->with("Akun Berhasi Ditambah kan  ");
     }
     public function ganti()
-    {
+    {       
         return view('auth.sandi');
+
+    }
+    public function gantisandi(Request $request, User $user)
+    {   
+        $validated = $request->validate([
+          
+            'password' => 'required',
+            'new_password' => 'nullable|min:8|max:12|required_with:password',
+            'password_confirmation' => 'nullable|min:8|max:12|required_with:new_password|same:new_password'
+     
+        ]);
+
+        $user->update($validated);
+        
+        return redirect('/user/list');
+        if (!is_null($request->input('password'))) {
+            if (Hash::check($request->input('password'), $user->password)) {
+                $user->password = Hash::make($request->input('new_password'));
+            } else {
+                return redirect()->back()->withInput();
+            }
+        }
+        return redirect('/user/list')->withInput();
     }
 }
